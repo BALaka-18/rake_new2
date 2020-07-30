@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+setup.py
+rake_new2/__init__.py
+rake_new2/__main__.py
+rake_new2/rake_new2.py
+rake_new2.egg-info/PKG-INFO
+rake_new2.egg-info/SOURCES.txt
+rake_new2.egg-info/dependency_links.txt
+rake_new2.egg-info/requires.txt
+rake_new2.egg-info/top_level.txt
