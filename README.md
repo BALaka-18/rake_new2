@@ -10,6 +10,16 @@ It tries to determine the key phrases in a text by calculating the co-occurrence
 
 ![Demo](https://user-images.githubusercontent.com/49288068/88929310-97fc2400-d297-11ea-811a-79d986cdfee4.png)
 
+## New in version 1.0.4
+
+1. Handles repetitive keywords/key-phrases
+
+2. Handles consecutive punctuations.
+
+3. Handles HTML tags in text : The user is allowed an option to choose if they want to keep HTML tags as keywords too.
+
+![Demo 2](https://user-images.githubusercontent.com/49288068/89038453-00add400-d35e-11ea-8da5-62c53e1e3990.png)
+
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install rake_new2.
