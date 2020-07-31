@@ -10,7 +10,7 @@ It tries to determine the key phrases in a text by calculating the co-occurrence
 
 ![Demo](https://user-images.githubusercontent.com/49288068/88929310-97fc2400-d297-11ea-811a-79d986cdfee4.png)
 
-## New in version 1.0.4
+## New in version 1.0.5
 
 1. Handles repetitive keywords/key-phrases
 
