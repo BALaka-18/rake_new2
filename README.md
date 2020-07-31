@@ -89,3 +89,9 @@ Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+
+## Beta Testers(I love you guys a lot !)
+
+1. Sankha Subhra Mondal
+2. Subhayan Das
