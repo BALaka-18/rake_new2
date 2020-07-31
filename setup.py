@@ -10,7 +10,7 @@ with open("README.md", "r") as fh:
 # Call setup()
 setup(
     name = "rake_new2",
-    version = "1.0.0",
+    version = "1.0.5",
     description = "A Python library that enables smooth keyword extraction from any text using the RAKE(Rapid Automatic Keyword Extraction) algorithm.",
     long_description = long_description,
     long_description_content_type = "text/markdown",
@@ -21,6 +21,8 @@ setup(
     classifiers = [
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Operating System :: OS Independent",
     ],
