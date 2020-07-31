@@ -34,21 +34,40 @@ pip install rake_new2
 from rake_new2 import Rake
 
 text = "Red apples are good in taste."
-rk = Rake()
+text2 = "<h1> Hello world !</h1>"
+rk,rk_new1,rk_new2 = Rake(),Rake(keep_html_tags=True),Rake(keep_html_tags=False)
+
+# Case 1
 # Initialize
 rk.get_keywords_from_raw_text(text)
-
 kw_s = rk.get_keywords_with_scores()  
 # Returns keywords with degree scores : {(1.0, 'taste'), (1.0, 'good'), (4.0, 'red apples')}
-
 kw = rk.get_ranked_keywords() 
 # Returns keywords only : ['red apples', 'taste', 'good']
-
 f = rk.get_word_freq()
 # Returns word frequencies as a Counter object : {'red': 1, 'apples': 1, 'good': 1, 'taste': 1}
-
 deg = rk.get_kw_degree()
 # Returns word degrees as defaultdict object : {'red': 2.0, 'apples': 2.0, 'good': 1.0, 'taste': 1.0}
+
+# Case 2 : Sample case for testing the 'keep_html_tags' parameter. Default = False
+print("\nORIGINAL TEXT : {}".format(text))
+# Sub Case 1 : Keeping the HTMLtags
+rk_new1.get_keywords_from_raw_text(text2)
+kw_s1 = rk_new1.get_keywords_with_scores()
+kw1 = rk_new1.get_ranked_keywords()
+print("Keeping the tags : ",kw1)
+
+# Sub Case 2 : Eliminating the HTML tags
+rk_new2.get_keywords_from_raw_text(text2)
+kw_s2 = rk_new2.get_keywords_with_scores()
+kw2 = rk_new2.get_ranked_keywords()
+print("Eliminating the tags : ",kw2)
+
+'''OUTPUT >>
+ORIGINAL TEXT : <h1> Hello world !</h1>
+Keeping the tags :  {'h1', 'hello'}
+Eliminating the tags :  {'hello world'} 
+'''
 ```
 
 
