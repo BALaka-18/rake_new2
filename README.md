@@ -91,8 +91,6 @@ Please make sure to update tests as appropriate.
 [MIT](https://choosealicense.com/licenses/mit/)
 
 
-### Beta Testers
+### Beta Tester
 
-1. Sankha Subhra Mondal
-
-2. Subhayan Das
+Sankha Subhra Mondal
