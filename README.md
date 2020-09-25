@@ -20,6 +20,8 @@ It tries to determine the key phrases in a text by calculating the co-occurrence
 
 ![Demo 2](https://user-images.githubusercontent.com/49288068/89038453-00add400-d35e-11ea-8da5-62c53e1e3990.png)
 
+## [READ MORE ABOUT RAKE](https://monkeylearn.com/keyword-extraction/)
+
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install rake_new2.
