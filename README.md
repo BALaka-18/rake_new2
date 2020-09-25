@@ -2,7 +2,35 @@
 
 ![GitHub issues](https://img.shields.io/github/issues/BALaka-18/rake_new2) ![GitHub forks](https://img.shields.io/github/forks/BALaka-18/rake_new2?style=social) ![GitHub stars](https://img.shields.io/github/stars/BALaka-18/rake_new2?style=social)
 
-# rake_new2
+
+
+<p align="center">
+  
+	<img src="https://hacktoberfest.digitalocean.com/assets/HF-full-logo-b05d5eb32b3f3ecc9b2240526104cf4da3187b8b61963dd9042fdc2536e4a76c.svg" />
+
+</p>
+
+
+
+## WELCOME TO HACKTOBERFEST 2020 !
+
+
+
+##### [START CONTRIBUTING !](https://github.com/BALaka-18/rake_new2/issues)                  
+
+
+
+##### [READ THE CONTRIBUTING GUIDELINES](https://github.com/BALaka-18/rake_new2/blob/master/Contributing_Guidelines.md)
+
+
+________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+## ABOUT THE PROJECT : rake_new2
+
+
+## rake_new2
 
 rake_new2 is a Python library that enables simple and fast keyword extraction from any text. As the name implies, this library works on the RAKE(Rapid Automatic Keyword Extraction) algorithm. 
 
