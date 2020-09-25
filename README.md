@@ -1,3 +1,5 @@
+![Hacktoberfest Logo](https://hacktoberfest.digitalocean.com/assets/HF-full-logo-b05d5eb32b3f3ecc9b2240526104cf4da3187b8b61963dd9042fdc2536e4a76c.svg)
+
 ![PyPI](https://img.shields.io/pypi/v/rake_new2) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/rake_new2) ![GitHub](https://img.shields.io/github/license/BALaka-18/rake_new2) ![Maintenance](https://img.shields.io/maintenance/yes/2020)
 
 ![GitHub issues](https://img.shields.io/github/issues/BALaka-18/rake_new2) ![GitHub forks](https://img.shields.io/github/forks/BALaka-18/rake_new2?style=social) ![GitHub stars](https://img.shields.io/github/stars/BALaka-18/rake_new2?style=social)
