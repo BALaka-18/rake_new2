@@ -3,7 +3,11 @@
 [![GitHub issues](https://img.shields.io/github/issues/BALaka-18/rake_new2)](https://github.com/BALaka-18/rake_new2/issues) [![GitHub forks](https://img.shields.io/github/forks/BALaka-18/rake_new2?style=social)](https://github.com/BALaka-18/rake_new2/network/members) [![GitHub stars](https://img.shields.io/github/stars/BALaka-18/rake_new2?style=social)](https://github.com/BALaka-18/rake_new2/stargazers)
 
 
+<p align="center">
 
+  <img src="https://embed-fastly.wistia.com/deliveries/49bd387c40e2c5aada92abdf973bc46d.webp?image_crop_resized=960x540">
+
+</p>
 
 ### What is keyword extraction ? **[READ HERE](https://monkeylearn.com/keyword-extraction/)**
 
