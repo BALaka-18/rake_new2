@@ -1,6 +1,7 @@
+import math
 import string
 import sys
-import math
+
 import nltk
 from nltk.tokenize import wordpunct_tokenize
 
