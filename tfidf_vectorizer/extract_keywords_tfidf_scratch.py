@@ -122,7 +122,7 @@ class TF_IDF_Scratch:
 
     Returns a list of 2-tuples containing (word, tf-idf score) sorted in decreasing order
     Words with tf-idf scores of 0 are filtered out
-    Exits with error if invalid index is specified 
+    Exits with error if invalid index is specified
     """
 
     def get_keywords(self, docs, doc_idx, max_num=None):
