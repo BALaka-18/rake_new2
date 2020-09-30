@@ -1,7 +1,6 @@
 """
 Example usage of the TF_IDF_Scratch class
 """
-
 from extract_keywords_tfidf_scratch import TF_IDF_Scratch
 
 
