@@ -4,6 +4,7 @@ import math
 import nltk
 from nltk.tokenize import wordpunct_tokenize
 
+
 class TF_IDF_Scratch:
     '''
     Initializes the algorithm with preferred language,
@@ -14,7 +15,7 @@ class TF_IDF_Scratch:
     If punctuations is unspecified, it defaults to Python's string.punctuation 
     '''
 
-    def __init__(self, language = 'english', stopwords = None, punctuations = None):
+    def __init__(self, language='english', stopwords=None, punctuations=None):
         # Using the NLTK stopwords if not specified
         self.stopwords = stopwords
         if self.stopwords is None:
@@ -41,15 +42,18 @@ class TF_IDF_Scratch:
 
     Returns a string which represents the cleaned document
     '''
+
     def clean_document(self, doc):
         # Tokenizing and converting to lowercase
         tokens = wordpunct_tokenize(doc)
-        cleaned_doc = ' '.join([token.lower() for token in tokens if not token.lower() in self.ignored])
+        cleaned_doc = ' '.join(
+            [token.lower() for token in tokens if not token.lower() in self.ignored])
         return cleaned_doc
 
     '''
     Digests a single document and counts the unique words that appear in it
     '''
+
     def digest_doc(self, doc):
         cleaned_doc = self.clean_document(doc)
         for word in set(cleaned_doc.split()):
@@ -57,12 +61,13 @@ class TF_IDF_Scratch:
                 self.word_freq_docs[word] += 1
             else:
                 self.word_freq_docs[word] = 1
-        
+
         self.num_docs += 1
 
     '''
     Builds a frequency counter of words from a corpus of docs
     '''
+
     def digest_docs(self, docs):
         for doc in docs:
             self.digest_doc(doc)
@@ -70,6 +75,7 @@ class TF_IDF_Scratch:
     '''
     Calculates the tf (term frequency) for each word in a document
     '''
+
     def compute_tf(self, doc):
         # The number of words in the document
         n = len(doc.split())
@@ -85,10 +91,11 @@ class TF_IDF_Scratch:
         # to get the term frequency of each word
         for word, count in self.tf.items():
             self.tf[word] = count / n
-    
+
     '''
     Calculates the idf (inverse document frequency) for each word in the document
     '''
+
     def compute_idf(self, doc):
         # The number of documents in the corpus
         N = self.num_docs
@@ -101,6 +108,7 @@ class TF_IDF_Scratch:
     Calculates the tf-idf score for each word in the document by multiplying
     the tf and idf scores
     '''
+
     def compute_tf_idf(self):
         for word, _ in self.tf.items():
             self.tf_idf[word] = self.tf[word] * self.idf[word]
@@ -114,7 +122,8 @@ class TF_IDF_Scratch:
     Words with tf-idf scores of 0 are filtered out
     Exits with error if invalid index is specified 
     '''
-    def get_keywords(self, docs, doc_idx, max_num = None):
+
+    def get_keywords(self, docs, doc_idx, max_num=None):
         if doc_idx > len(docs) - 1 or doc_idx < 0:
             print('ERROR: Invalid index specified!')
             sys.exit(1)
@@ -140,13 +149,15 @@ class TF_IDF_Scratch:
         self.compute_tf_idf()
 
         # Sorting by highest to lowest tf-idf scores, filtering out zeroes
-        sorted_keywords_scores = [x for x in sorted(self.tf_idf.items(), key=lambda x: x[1], reverse=True) if not x[1] == 0]
-        
+        sorted_keywords_scores = [x for x in sorted(
+            self.tf_idf.items(), key=lambda x: x[1], reverse=True) if not x[1] == 0]
+
         # Return upto max_num keywords or all of them,
         # depending on whether or not max_num is specified
         if max_num is None:
             return sorted_keywords_scores
         return sorted_keywords_scores[:max_num]
+
 
 '''
 Test run cases

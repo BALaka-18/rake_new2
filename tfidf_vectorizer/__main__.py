@@ -4,6 +4,7 @@ Example usage of the TF_IDF_Scratch class
 
 from extract_keywords_tfidf_scratch import TF_IDF_Scratch
 
+
 def main():
     # Example corpus
     docs = [
@@ -22,6 +23,7 @@ def main():
     max_num = 10
 
     print(tfidf_obj.get_keywords(docs, doc_idx, max_num))
+
 
 if __name__ == "__main__":
     main()
