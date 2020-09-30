@@ -10,4 +10,3 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: 'This is your first issue for this repository ! Enjoy contributing : )'
-        pr-message: 'Welcome to rake_new2, this is your first PR. Please wait for the maintainer to review it. Happy contributing : )'
