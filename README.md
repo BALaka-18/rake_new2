@@ -2,6 +2,13 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/BALaka-18/rake_new2)](https://github.com/BALaka-18/rake_new2/issues) [![GitHub forks](https://img.shields.io/github/forks/BALaka-18/rake_new2?style=social)](https://github.com/BALaka-18/rake_new2/network/members) [![GitHub stars](https://img.shields.io/github/stars/BALaka-18/rake_new2?style=social)](https://github.com/BALaka-18/rake_new2/stargazers)
 
+
+
+
+### What is keyword extraction ? **[READ HERE](https://monkeylearn.com/keyword-extraction/)**
+
+# **ABOUT THE PROJECT**
+
 # rake_new2
 
 rake_new2 is a Python library that enables simple and fast keyword extraction from any text. As the name implies, this library works on the RAKE(Rapid Automatic Keyword Extraction) algorithm. 
