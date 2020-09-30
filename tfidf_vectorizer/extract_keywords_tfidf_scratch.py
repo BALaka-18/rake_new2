@@ -47,9 +47,10 @@ class TF_IDF_Scratch:
     def clean_document(self, doc):
         # Tokenizing and converting to lowercase
         tokens = wordpunct_tokenize(doc)
-        cleaned_doc = " ".join(
-            [token.lower() for token in tokens if not token.lower() in self.ignored]
-        )
+        cleaned_doc = " ".join([
+            token.lower() for token in tokens
+            if not token.lower() in self.ignored
+        ])
         return cleaned_doc
 
     """
@@ -152,8 +153,8 @@ class TF_IDF_Scratch:
 
         # Sorting by highest to lowest tf-idf scores, filtering out zeroes
         sorted_keywords_scores = [
-            x
-            for x in sorted(self.tf_idf.items(), key=lambda x: x[1], reverse=True)
+            x for x in sorted(
+                self.tf_idf.items(), key=lambda x: x[1], reverse=True)
             if not x[1] == 0
         ]
 
