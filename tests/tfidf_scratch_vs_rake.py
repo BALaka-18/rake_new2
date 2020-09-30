@@ -7,7 +7,6 @@ from tfidf_vectorizer.extract_keywords_tfidf_scratch import TF_IDF_Scratch
 
 sys.path.append("..")
 
-
 docs = [
     "Java is a class based, object oriented programming language that is designed to have as few implementation dependencies as possible. It is a general purpose programming language intended to let application developers write once, run anywhere, meaning that compiled Java code can run on all platforms that support Java without the need for recompilation.",
     "C++ is a general purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or 'C with Classes'. The language has expanded significantly over time, and modern C++ now has object oriented, generic, and functional features in addition to facilities for low-level memory manipulation.",
@@ -67,7 +66,8 @@ for keyphrase in manual_keyphrases:
 tfidf_precision = tfidf_tp / tfidf_total * 100
 rake_precision = rake_tp / rake_total * 100
 
-print("tf-idf (scratch) precision score: " + str(round(tfidf_precision, 2)) + "%")
+print("tf-idf (scratch) precision score: " + str(round(tfidf_precision, 2)) +
+      "%")
 print("rake precision score: " + str(round(rake_precision, 2)) + "%")
 print()
 
