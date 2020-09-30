@@ -1,8 +1,9 @@
 # Hacky fix to remove top-level import errors
+import sys
 from timeit import default_timer as timer
+
 from rake_new2 import Rake
 from tfidf_vectorizer.extract_keywords_tfidf_scratch import TF_IDF_Scratch
-import sys
 
 sys.path.append("..")
 
