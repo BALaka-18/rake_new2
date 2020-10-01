@@ -1,0 +1,35 @@
+name: Rake_New2 workflow for codecov
+on: 
+  push: 
+    branches: [master]
+  pull_request:
+    branches: [master]
+jobs:
+  run:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    env:
+      OS: ${{ matrix.os }}
+      PYTHON: '3.7'
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup Python
+        uses: actions/setup-python@master
+        with:
+          python-version: 3.7
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          echo -e "import nltk\nnltk.download('stopwords')" | python3
+          echo -e "import nltk\nnltk.download('punkt')" | python3
+      - name: Generate coverage report
+        run: |
+          pytest --cov=./ --cov-report=xml
+      - uses: codecov/codecov-action@v1
+        with:
+          file: ./coverage.xml
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: true
