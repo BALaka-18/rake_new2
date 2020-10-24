@@ -39,12 +39,55 @@ TF-IDF [1] stands for **term frequency - inverse document frequency**. It is a m
 
 We obtain the TF-IDF by multiplying these two elements:
 
-<img src="https://latex.codecogs.com/svg.latex?TFIDF(w,d)=TF(w,d)\times IDF(w,D)" title="TFIDF(w,d)=TF(w,d)\times IDF(w,D)"/>
+<img src="https://latex.codecogs.com/png.latex?TFIDF(w,d)=TF(w,d)\times IDF(w,D)" title="TFIDF(w,d)=TF(w,d)\times IDF(w,D)"/>
 
 This measure gives insight into words that appears often in a specific document, but not in the other documents of the set. Indeed, words that are frequent in each document are often not very relevant; they are not selected with TF-IDF. But when there is only one document in <img src="https://latex.codecogs.com/svg.latex?D" title="D"/>, TF-IDF simply consists in choosing keyword on their frequency, which may not be bery relevant.
 
 ### RAKE
 
+RAKE stands for Rapid Automatic Keyword Extraction. It was introduced in 2010 by _Rose, Stuart, et al. "Automatic keyword extraction from individual documents."_ [[1]](#references).
+
+Let's take a text <img src="https://latex.codecogs.com/svg.latex?t" title="t"/> composed of some words <img src="https://latex.codecogs.com/svg.latex?w_i" title="w_i"/>. We can write <img src="https://latex.codecogs.com/svg.latex?t=(w_1,\dots,w_n)" title="t=(w_1,\ddots,w_n)"/>.
+
+1. First, let's split the text using its **stopwords** to produce some **candidate keywords**; for instance, the sentence 
+
+    Keyword extraction is not that difficult after all. There are many libraries that can help you with keyword extraction. Rapid automatic keyword extraction is one of those.
+    
+    becomes
+    
+    `Keyword extraction` is not that `difficult` after all. There are `many libraries` that can `help` you with `keyword extraction`. `Rapid automatic keyword extraction` is one of those.
+    
+    The candidate keywords (`keyword extraction`, `difficult`...) are seqences composed of **content words** (here `keyword`, `extraction`, `difficult`...).
+    
+2. Splitting the text highlighted the words co-occurences. We can therefore build the **co-occurence matrix** <img src="https://latex.codecogs.com/svg.latex?M=(n_{i,j})_{i,j\leq p}" title="M=(n_{i,j})_{i,j\leq p}"/>, where <img src="https://latex.codecogs.com/svg.latex?n_{i,j}" title="n_{i,j}"/> is the number of co-occurences of the content words <img src="https://latex.codecogs.com/svg.latex?\tilde w_i" title="\tilde w_i"/> and <img src="https://latex.codecogs.com/svg.latex?\tilde w_j" title="\tilde w_j"/>.
+
+    |            | keyword | extraction | difficult | many | libraries | help | rapid | automatic |
+    |------------|---------|------------|-----------|------|-----------|------|-------|-----------|
+    | keyword    | 3       | 3          |           |      |           |      | 1     | 1         |
+    | extraction | 3       | 3          |           |      |           |      | 1     | 1         |
+    | difficult  |         |            | 1         |      |           |      |       |           |
+    | many       |         |            |           | 1    | 1         |      |       |           |
+    | libraries  |         |            |           | 1    | 1         |      |       |           |
+    | help       |         |            |           |      |           | 1    |       |           |
+    | rapid      | 1       | 1          |           |      |           |      | 1     | 1         |
+    | automatic  | 1       | 1          |           |      |           |      | 1     | 1         |
+    
+3. Then, we compute a **score for each word**. This score can take various forms, such as 
+    - the **degree** <img src="https://latex.codecogs.com/svg.latex?d_i" title="d_i"/> of the word in the co-occurence matrix (the sum of the number of co-occurences the word has with any other context word);
+    - the **frequency** <img src="https://latex.codecogs.com/svg.latex?f_i" title="f_i"/> of the word (the number of occurences of the word in <img src="https://latex.codecogs.com/svg.latex?t" title="t"/>);
+    - the ratio of degree to frequency, <img src="https://latex.codecogs.com/svg.latex?d_i / f_i" title="d_i / f_i"/>;
+
+    |           | keyword | extraction | difficult | many | libraries | help | rapid | automatic |
+    |-----------|---------|------------|-----------|------|-----------|------|-------|-----------|
+    | degree    | 8       | 8          | 1         | 2    | 2         | 1    | 4     | 4         |
+    | frequency | 3       | 3          | 1         | 1    | 1         | 1    | 1     | 1         |
+    | ratio     | 2.7     | 2.7        | 1         | 2    | 2         | 1    | 4     | 4         |
+
+4. The word scores are then used to attribute a score to each **expression** of the text (here `keyword extraction`, `many libraries`...) by summing the scores of its words.
+
+5. Finally, the best ranked expressions can be used to summarize the text.
+
+_Sentence of the example was taken from [Keyword Extraction](https://monkeylearn.com/keyword-extraction/), MonkeyLearn_ [[2]](#references)
 
 ## 2. Linguistic approaches
 
@@ -61,3 +104,4 @@ This measure gives insight into words that appears often in a specific document,
 ### References
 
 **[1]**&emsp;Ramos, Juan. _"Using tf-idf to determine word relevance in document queries."_ Proceedings of the first instructional conference on machine learning. Vol. 242. 2003.\
+**[2]**&emsp;_"Keyword Extraction: A Guide to Finding Keywords in Text."_ Monkeylearn, [https://monkeylearn.com/keyword-extraction/](https://monkeylearn.com/keyword-extraction/)\
