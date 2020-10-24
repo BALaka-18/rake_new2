@@ -35,7 +35,7 @@ TF-IDF [1] stands for **term frequency - inverse document frequency**. It is a m
 
 - the **inverse document frequency** measures how rare this word is in the whole collection <img src="https://latex.codecogs.com/svg.latex?D" title="D"/>, comparing the number of documents to the number of documents where <img src="https://latex.codecogs.com/svg.latex?w" title="w"/> appears:
 
-  <img src="https://latex.codecogs.com/svg.latex?IDF(w,D)=\log\frac{\vert D\vert}{\vert \{d:w\in d\}\vert}" title="IDF(w,D)=\log\frac{\vert D\vert}{\vert \{d:w\in d\}\vert}"/>
+  <img src="https://latex.codecogs.com/svg.latex?IDF(w,D)=\log\frac{|D|}{|\{d:w\in d\}|}" title="IDF(w,D)=\log\frac{|D|}{|\{d:w\in d\}|}"/>
 
 We obtain the TF-IDF by multiplying these two elements:
 
@@ -47,19 +47,17 @@ This measure gives insight into words that appears often in a specific document,
 
 RAKE stands for Rapid Automatic Keyword Extraction. It was introduced in 2010 by _Rose, Stuart, et al. "Automatic keyword extraction from individual documents."_ [[1]](#references).
 
-Let's take a text <img src="https://latex.codecogs.com/svg.latex?t" title="t"/> composed of some words <img src="https://latex.codecogs.com/svg.latex?w_i" title="w_i"/>. We can write <img src="https://latex.codecogs.com/svg.latex?t=(w_1,\dots,w_n)" title="t=(w_1,\ddots,w_n)"/>.
+Let's consider the following text:
 
-1. First, let's split the text using its **stopwords** to produce some **candidate keywords**; for instance, the sentence 
+_Keyword extraction is not that difficult after all. There are many libraries that can help you with keyword extraction. Rapid automatic keyword extraction is one of those._
 
-    Keyword extraction is not that difficult after all. There are many libraries that can help you with keyword extraction. Rapid automatic keyword extraction is one of those.
+1. First, let's split the text using its **stopwords** to produce some **candidate keywords**. The text becomes 
     
-    becomes
+    `Keyword extraction` _is not that_ `difficult` _after all. There are_ `many libraries` _that can_ `help` _you with_ `keyword extraction`. `Rapid automatic keyword extraction` _is one of those._
     
-    `Keyword extraction` is not that `difficult` after all. There are `many libraries` that can `help` you with `keyword extraction`. `Rapid automatic keyword extraction` is one of those.
+    The candidate keywords (`keyword extraction`, `difficult`...) are sequences composed of **content words** (here `keyword`, `extraction`, `difficult`...).
     
-    The candidate keywords (`keyword extraction`, `difficult`...) are seqences composed of **content words** (here `keyword`, `extraction`, `difficult`...).
-    
-2. Splitting the text highlighted the words co-occurences. We can therefore build the **co-occurence matrix** <img src="https://latex.codecogs.com/svg.latex?M=(n_{i,j})_{i,j\leq p}" title="M=(n_{i,j})_{i,j\leq p}"/>, where <img src="https://latex.codecogs.com/svg.latex?n_{i,j}" title="n_{i,j}"/> is the number of co-occurences of the content words <img src="https://latex.codecogs.com/svg.latex?\tilde w_i" title="\tilde w_i"/> and <img src="https://latex.codecogs.com/svg.latex?\tilde w_j" title="\tilde w_j"/>.
+2. Splitting the text highlighted the words co-occurences. We can therefore build the **co-occurence matrix** <img src="https://latex.codecogs.com/svg.latex?M=(n_{i,j})_{i,j\leq p}" title="M=(n_{i,j})_{i,j\leq p}"/>, where <img src="https://latex.codecogs.com/svg.latex?n_{i,j}" title="n_{i,j}"/> is the number of co-occurences of the content words i and j.
 
     |            | keyword | extraction | difficult | many | libraries | help | rapid | automatic |
     |------------|---------|------------|-----------|------|-----------|------|-------|-----------|
@@ -75,7 +73,7 @@ Let's take a text <img src="https://latex.codecogs.com/svg.latex?t" title="t"/> 
 3. Then, we compute a **score for each word**. This score can take various forms, such as 
     - the **degree** <img src="https://latex.codecogs.com/svg.latex?d_i" title="d_i"/> of the word in the co-occurence matrix (the sum of the number of co-occurences the word has with any other context word);
     - the **frequency** <img src="https://latex.codecogs.com/svg.latex?f_i" title="f_i"/> of the word (the number of occurences of the word in <img src="https://latex.codecogs.com/svg.latex?t" title="t"/>);
-    - the ratio of degree to frequency, <img src="https://latex.codecogs.com/svg.latex?d_i / f_i" title="d_i / f_i"/>;
+    - the ratio of degree to frequency, <img src="https://latex.codecogs.com/svg.latex?d_i / f_i" title="d_i \/ f_i"/>;
 
     |           | keyword | extraction | difficult | many | libraries | help | rapid | automatic |
     |-----------|---------|------------|-----------|------|-----------|------|-------|-----------|
