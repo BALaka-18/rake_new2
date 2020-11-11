@@ -3,9 +3,8 @@
 ## Table of contents
 
 1. [ Simple statistical approaches ](#1-simple-statistical-approaches)
-2. [ Linguistic approaches ](#2-linguistic-approaches)
-3. [ Graph-based approaches ](#3-graph-based-approaches)
-4. [ Machine Learning approaches ](#4-machine-learning-approaches)
+2. [ Graph-based approaches ](#2-graph-based-approaches)
+3. [ Machine Learning approaches ](#3-machine-learning-approaches)
 
 
 ## 1. Simple statistical approaches
@@ -87,10 +86,7 @@ _Keyword extraction is not that difficult after all. There are many libraries th
 
 _Sentence of the example was taken from [Keyword Extraction](https://monkeylearn.com/keyword-extraction/), MonkeyLearn_ [[2]](#references)
 
-## 2. Linguistic approaches
-
-
-## 3. Graph-based approaches
+## 2. Graph-based approaches
 
 ### Building a graph
 
@@ -121,7 +117,7 @@ For **weighted graphs**, we only need to slightly change the equation:
 <img src="https://latex.codecogs.com/svg.latex?WS(v_i)=(1-d)+d*\sum_{j\in In(v_i)}\frac{w_{ji}}{\sum_{v_k\in Out(v_j)}w_{jk}}WS(v_j)" title="WS(v_i)=(1-d)+d*\sum_{j\in In(v_i)}\frac{w_{ji}}{\sum_{v_k\in Out(v_j)}w_{jk}}WS(v_j)"/>
 
 
-## 4. Machine Learning approaches
+## 3. Machine Learning approaches
 
 Keyword extraction can be seen as supervised learning from a set of examples. Machine learning approaches use training examples to learn a model and apply the model to find keywords from new documents.
 
