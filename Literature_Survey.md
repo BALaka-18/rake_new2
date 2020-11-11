@@ -25,7 +25,7 @@ Analyzing the occurence dependencies between the words in a document may be a go
 
 ### TF-IDF
 
-TF-IDF [1] stands for **term frequency - inverse document frequency**. It is a measure of how important a word <img src="https://latex.codecogs.com/svg.latex?w" title="w"/> is to a document <img src="https://latex.codecogs.com/svg.latex?d" title="d"/> in a collection of documents <img src="https://latex.codecogs.com/svg.latex?D" title="D"/>. To define the TF-IDF, we need to define **term frequency** and **inverse document frequency**:
+TF-IDF [[1]](#references) stands for **term frequency - inverse document frequency**. It is a measure of how important a word <img src="https://latex.codecogs.com/svg.latex?w" title="w"/> is to a document <img src="https://latex.codecogs.com/svg.latex?d" title="d"/> in a collection of documents <img src="https://latex.codecogs.com/svg.latex?D" title="D"/>. To define the TF-IDF, we need to define **term frequency** and **inverse document frequency**:
 
 - The **term frequency** is the number of times <img src="https://latex.codecogs.com/svg.latex?w" title="w"/> appears in <img src="https://latex.codecogs.com/svg.latex?d" title="d"/> divided by the occurences of all terms in <img src="https://latex.codecogs.com/svg.latex?d" title="d"/>:
 
@@ -123,6 +123,42 @@ For **weighted graphs**, we only need to slightly change the equation:
 
 ## 4. Machine Learning approaches
 
+Keyword extraction can be seen as supervised learning from a set of examples. Machine learning approaches use training examples to learn a model and apply the model to find keywords from new documents.
+
+### Naïve Bayes
+
+The Naïve Bayes algorithm, introduced in [[5]](#references), aims at classifying words as being a keyword or not. To infer this classification, it needs the words to have **attributes**; in the original paper, two attributes turned out to be useful to discriminate between keywords and non-keywords: the **TF-IDF score**, that we studied above, and the **distance** of the word's first appearance in the text, defined by the number of words that precede the first appearance of the word divided by the number of words in the text. This two values, although being real numbers, are then **discretized**.
+
+If we assume that these two attributes (TF-IDF and distance) are independent, the probability that a word is a keyword given that it has discretized TF-IDF value <img src="https://latex.codecogs.com/svg.latex?T" title="T"/> and discretized distance value <img src="https://latex.codecogs.com/svg.latex?D" title="D"/> is
+
+<img src="https://latex.codecogs.com/svg.latex?P(key\vert T,D)=\frac{P(T\vert key)P(D\vert key)P(key)}{P(T,D)}" title="P(key\vert T,D)=\frac{P(T\vert key)P(D\vert key)P(key)}{P(T,D)}"/>
+
+where:
+
+- <img src="https://latex.codecogs.com/svg.latex?P(T \vert key)" title="P(T \vert key)"/> is the probability that a keyword has TF-IDF score <img src="https://latex.codecogs.com/svg.latex?T" title="T"/>
+- <img src="https://latex.codecogs.com/svg.latex?P(D \vert key)" title="P(D \vert key)"/> the probability that it has distance <img src="https://latex.codecogs.com/svg.latex?D" title="D"/>
+- <img src="https://latex.codecogs.com/svg.latex?P(key)" title="P(key)"/> the probability that a word is a keyword
+- <img src="https://latex.codecogs.com/svg.latex?P(T,D)" title="P(T,D)"/> a normalization factor that makes <img src="https://latex.codecogs.com/svg.latex?P(key\vert T,D)" title="P(key\vert T,D)"/> lie between zero and one.
+
+and all these probabilities can be estimated by counting the number of times the corresponding event occurs in the training data.
+
+### CRF
+
+Conditional Random Fields (CRF) model is a probabilistic model for labeling sequence data. [[6]](#references) introduces the use of CRF for keyword extraction. Let's say we want to classify the words of a text as being a keyword or not. For a given sequential data <img src="https://latex.codecogs.com/svg.latex?X=(x_1,\dots,x_n)" title="X=(x_1,\dots,x_n)"/> and its corresponding status labels <img src="https://latex.codecogs.com/svg.latex?Y=(y_1,\dots,y_n)" title="Y=(y_1,\dots,y_n)"/>, whose elements are 0 or 1, we define the **conditional probability** as
+
+<img src="https://latex.codecogs.com/svg.latex?P(Y\vert X)=\frac{1}{Z_X}\exp\left[\sum_i\sum_j \lambda_jf_j(y_{i-1},y_i,X,i)\right]" title="P(Y\vert X)=\frac{1}{Z_X}\exp\left[\sum_i\sum_j \lambda_jf_j(y_{i-1},y_i,X,i)\right]"/>
+
+where:
+
+- <img src="https://latex.codecogs.com/svg.latex?Z_X" title="Z_X"/> is a normalization factor that makes the probability of all state sequences sum to 1
+- <img src="https://latex.codecogs.com/svg.latex?f_j(y_{i-1},y_i,X,i)" title="f_j(y_{i-1},y_i,X,i)"/> is a feature function
+- <img src="https://latex.codecogs.com/svg.latex?\lambda_j" title="\lambda_j"/> is a learnt weight associated with feature <img src="https://latex.codecogs.com/svg.latex?f_j" title="f_j"/>
+
+To train a CRF, one can use the maximum entropy learning algorithm. We determine the most probable label sequence by
+
+<img src="https://latex.codecogs.com/svg.latex?Y^*=\text{argmax}_y P(Y\vert X)" title="Y^*=\text{argmax}_Y P(Y\vert X)"/>
+
+
 
 
 ### References
@@ -131,3 +167,5 @@ For **weighted graphs**, we only need to slightly change the equation:
 **[2]**&emsp;_"Keyword Extraction: A Guide to Finding Keywords in Text."_ Monkeylearn, [https://monkeylearn.com/keyword-extraction/](https://monkeylearn.com/keyword-extraction/)\
 **[3]**&emsp;Mihalcea, Rada, Paul Tarau, and Elizabeth Figa. _"PageRank on semantic networks, with application to word sense disambiguation."_ COLING 2004: Proceedings of the 20th International Conference on Computational Linguistics. 2004.\
 **[4]**&emsp;Brin, Sergey, and Lawrence Page. _"The anatomy of a large-scale hypertextual web search engine."_. 1998.\
+**[5]**&emsp;Wu, Yi-fang Brook, et al. _"Domain-specific keyphrase extraction."_ Proceedings of the 14th ACM international conference on Information and knowledge management. 2005.\
+**[6]**&emsp;Zhang, Chengzhi. _"Automatic keyword extraction from documents using conditional random fields."_ Journal of Computational Information Systems 4.3 (2008): 1169-1180.\
