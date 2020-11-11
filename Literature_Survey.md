@@ -35,11 +35,11 @@ TF-IDF [1] stands for **term frequency - inverse document frequency**. It is a m
 
 - the **inverse document frequency** measures how rare this word is in the whole collection <img src="https://latex.codecogs.com/svg.latex?D" title="D"/>, comparing the number of documents to the number of documents where <img src="https://latex.codecogs.com/svg.latex?w" title="w"/> appears:
 
-  <img src="https://latex.codecogs.com/svg.latex?IDF(w,D)=\log\frac{|D|}{|\{d:w\in d\}|}" title="IDF(w,D)=\log\frac{|D|}{|\{d:w\in d\}|}"/>
+  <img src="https://latex.codecogs.com/svg.latex?IDF(w,D)=\log\frac{|D|}{|\{d:w \in d \} | }" title="IDF(w,D)=\log\frac{|D|}{|\{d:w \in d \} | }"/>
 
 We obtain the TF-IDF by multiplying these two elements:
 
-<img src="https://latex.codecogs.com/png.latex?TFIDF(w,d)=TF(w,d)\times IDF(w,D)" title="TFIDF(w,d)=TF(w,d)\times IDF(w,D)"/>
+<img src="https://latex.codecogs.com/svg.latex?TFIDF(w,d)=TF(w,d) \times IDF(w,D)" title="TFIDF(w,d)=TF(w,d) \times IDF(w,D)"/>
 
 This measure gives insight into words that appears often in a specific document, but not in the other documents of the set. Indeed, words that are frequent in each document are often not very relevant; they are not selected with TF-IDF. But when there is only one document in <img src="https://latex.codecogs.com/svg.latex?D" title="D"/>, TF-IDF simply consists in choosing keyword on their frequency, which may not be bery relevant.
 
@@ -73,7 +73,7 @@ _Keyword extraction is not that difficult after all. There are many libraries th
 3. Then, we compute a **score for each word**. This score can take various forms, such as 
     - the **degree** <img src="https://latex.codecogs.com/svg.latex?d_i" title="d_i"/> of the word in the co-occurence matrix (the sum of the number of co-occurences the word has with any other context word);
     - the **frequency** <img src="https://latex.codecogs.com/svg.latex?f_i" title="f_i"/> of the word (the number of occurences of the word in <img src="https://latex.codecogs.com/svg.latex?t" title="t"/>);
-    - the ratio of degree to frequency, <img src="https://latex.codecogs.com/svg.latex?d_i / f_i" title="d_i \/ f_i"/>;
+    - the ratio of degree to frequency, <img src="https://latex.codecogs.com/svg.latex?d_i \/ f_i" title="d_i \/ f_i"/>;
 
     |           | keyword | extraction | difficult | many | libraries | help | rapid | automatic |
     |-----------|---------|------------|-----------|------|-----------|------|-------|-----------|
@@ -90,9 +90,35 @@ _Sentence of the example was taken from [Keyword Extraction](https://monkeylearn
 ## 2. Linguistic approaches
 
 
-
 ## 3. Graph-based approaches
 
+### Building a graph
+
+To represent a text as a graph, we can consider its words as vertices. The edges (connections between the vertices) can be labelled, for instance with the relation that those words have in the text. Edges can be **directed** (signifying a unilateral dependency between the words) or **undirected** (co-occurences for instance).
+
+![Graphs](./.github/img/graphs.png)
+_An undirected graph (left) and a directed one (right)._
+
+Next, we want to measure how important a word is based on the information contained in the graph and its structure. To do so, we can compute the **degree** of each vertice of the graph, being for a directed graph
+
+<img src="https://latex.codecogs.com/svg.latex?D_v=D_v^{in}+D_v^{out}" title="D_v=D_v^{in}+D_v^{out}"/>
+
+where <img src="https://latex.codecogs.com/svg.latex?D_v^{in}" title="D_v^{in}"/> is the number of edges whose end is <img src="https://latex.codecogs.com/svg.latex?v" title="v"/> and <img src="https://latex.codecogs.com/svg.latex?D_v^{out}" title="D_v^{out}"/> the number of edges starting from <img src="https://latex.codecogs.com/svg.latex?v" title="v"/>. For an undirected graph, <img src="https://latex.codecogs.com/svg.latex?D_v" title="D_v"/> is simply the number of edges that have an endpoint in <img src="https://latex.codecogs.com/svg.latex?v" title="v"/>. It is then possible to normalize this number between 0 and 1 using a division by the maximum degree in the graph.
+
+
+### TextRank
+
+The TextRank algorithm was introduced in 2004 by [[3]](#references). The basic idea is to attribute a score for each vertex, as we did above, taking into account the number of in and out edges linked to it. We define the score of a vertex <img src="https://latex.codecogs.com/svg.latex?v_i" title="v_i"/> by
+
+<img src="https://latex.codecogs.com/svg.latex?S(v_i)=(1-d)+d*\sum_{j\in In(v_i)}\frac{1}{\vert Out(v_j)\vert}S(v_j)" title="S(v_i)=(1-d)+d*\sum_{j\in In(v_i)}\frac{1}{\vert Out(v_j)\vert}S(v_j)"/>
+
+where <img src="https://latex.codecogs.com/svg.latex?In(v)" title="In(v)"/> is the set of vertices that point to <img src="https://latex.codecogs.com/svg.latex?v" title="v"/>, <img src="https://latex.codecogs.com/svg.latex?Out(v)" title="Out(v)"/> the set of vertices that <img src="https://latex.codecogs.com/svg.latex?v" title="v"/> points to, and <img src="https://latex.codecogs.com/svg.latex?d\in[0,1]" title="d\in[0,1]"/> a **damping factor**. This algorithm actually derives from Google's PageRank [[4]](#references) and implements the "random surfer model" in the field of web surfing, where a user clicks on links at random with a probability <img src="https://latex.codecogs.com/svg.latex?d" title="d"/> and jumps to a completely different page with a probability <img src="https://latex.codecogs.com/svg.latex?1-d" title="1-d"/>. The factor <img src="https://latex.codecogs.com/svg.latex?d" title="d"/> is usually set to 0.85.
+
+Starting from arbitrary values assigned to each node in the graph, the **computation** iterates until convergence below a given threshold is achieved.
+
+For **weighted graphs**, we only need to slightly change the equation:
+
+<img src="https://latex.codecogs.com/svg.latex?WS(v_i)=(1-d)+d*\sum_{j\in In(v_i)}\frac{w_{ji}}{\sum_{v_k\in Out(v_j)}w_{jk}}WS(v_j)" title="WS(v_i)=(1-d)+d*\sum_{j\in In(v_i)}\frac{w_{ji}}{\sum_{v_k\in Out(v_j)}w_{jk}}WS(v_j)"/>
 
 
 ## 4. Machine Learning approaches
@@ -103,3 +129,5 @@ _Sentence of the example was taken from [Keyword Extraction](https://monkeylearn
 
 **[1]**&emsp;Ramos, Juan. _"Using tf-idf to determine word relevance in document queries."_ Proceedings of the first instructional conference on machine learning. Vol. 242. 2003.\
 **[2]**&emsp;_"Keyword Extraction: A Guide to Finding Keywords in Text."_ Monkeylearn, [https://monkeylearn.com/keyword-extraction/](https://monkeylearn.com/keyword-extraction/)\
+**[3]**&emsp;Mihalcea, Rada, Paul Tarau, and Elizabeth Figa. _"PageRank on semantic networks, with application to word sense disambiguation."_ COLING 2004: Proceedings of the 20th International Conference on Computational Linguistics. 2004.\
+**[4]**&emsp;Brin, Sergey, and Lawrence Page. _"The anatomy of a large-scale hypertextual web search engine."_. 1998.\
