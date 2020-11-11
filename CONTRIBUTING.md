@@ -12,7 +12,7 @@ Follow these steps to set your local repository up and start contributing :
 
 #### NOTE : 
 Make sure before you start making changes locally, you pull the code from the upstream everytime to make sure your local repository (remote) is even with the original repository (upstream).
-Command to pull code : ```git pull origin <BRANCH_NAME>```  (For now, the branch name will be ```master```)
+Command to pull code : ```git pull origin <BRANCH_NAME>```  (For now, the branch name will be ```main```)
 
 _____________________________________________________________________________________________________________________________________________________________________________________________
 
@@ -38,7 +38,7 @@ NOTE : The branch name must follow these conventions
 
     a. Stage your changes : ```git add .```
     
-    b. Commit your changes : ```git commit -m "<proper commit message>"
+    b. Commit your changes : ```git commit -m "<proper commit message>"```
     
     c. Push them to your forked repository : ```git push origin <NEW_BRANCH_NAME>```
     
