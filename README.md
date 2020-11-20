@@ -20,11 +20,13 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________________________________________________
 
 
-## What is keyword extraction ? **[READ HERE](https://monkeylearn.com/keyword-extraction/)**
+<h2 align="center">
+   <strong>ABOUT THIS PROJECT</strong>
+</h2>
 
-# **ABOUT THE PROJECT**
-
-# rake_new2
+<h3 align="left">
+       <strong><a href = "https://pypi.org/project/rake-new2/">rake_new2</a></strong>
+</h3>
 
 rake_new2 is a Python library that enables simple and fast keyword extraction
 from any text. As the name implies, this library works on the RAKE(Rapid
