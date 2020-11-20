@@ -7,7 +7,20 @@
 [![GitHub forks](https://img.shields.io/github/forks/BALaka-18/rake_new2?style=social)](https://github.com/BALaka-18/rake_new2/network/members)
 [![GitHub stars](https://img.shields.io/github/stars/BALaka-18/rake_new2?style=social)](https://github.com/BALaka-18/rake_new2/stargazers)
 
-### What is keyword extraction ? **[READ HERE](https://monkeylearn.com/keyword-extraction/)**
+________________________________________________________________________________________________________________________________________________________________________________
+
+<p align="center">
+       <img src="https://miro.medium.com/max/1282/1*M6NUbP09lwQpaTcywBzU7w.png" alt="WoC logo" width="720" height="300" />
+</p>
+
+<p align="center">
+   <strong>WINTER OF CODE 2020 PROJECT IDEAS FOR rake_new2 : <a href = "https://github.com/dsc-iem/WoC-Project-Ideas#rake_new2">Read all project ideas here</a></strong>
+</p>
+
+________________________________________________________________________________________________________________________________________________________________________________
+
+
+## What is keyword extraction ? **[READ HERE](https://monkeylearn.com/keyword-extraction/)**
 
 # **ABOUT THE PROJECT**
 
