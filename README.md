@@ -17,8 +17,28 @@ ________________________________________________________________________________
    <strong>WINTER OF CODE 2020 PROJECT IDEAS FOR rake_new2 : <a href = "https://github.com/dsc-iem/WoC-Project-Ideas#rake_new2">Read all project ideas here</a></strong>
 </p>
 
+
+<p align="center">
+   <strong> ------ ALL STUDENTS FOR THIS SEASON OF WoC HAVE BEEN SELECTED ALREADY. NO LONGER ACCEPTING PROPOSALS. ------ </strong> Head over to DevScript Winter of Code logo if you want to contribute. 
+</p>
+
 ________________________________________________________________________________________________________________________________________________________________________________
 
+<p align="center">
+   <strong> --- AND --- </strong>
+</p>
+
+________________________________________________________________________________________________________________________________________________________________________________
+
+<p align="center">
+       <img src="https://devscript.tech/woc/img/WOC-logo.png" alt="DWoC logo" width="300" height="300" />
+</p>
+
+<p align="center">
+   <strong>WINTER OF CODE 2020 PROJECT IDEAS FOR rake_new2 : <a href = "https://github.com/BALaka-18/rake_new2/issues?q=is%3Aissue+is%3Aopen+label%3ADWOC">See all updated and open Issues here. </a></strong> Comment to get assigned. Assignment is based on FCFS(First Come, First Serve) basis or based on better proposal/idea/worklflow.
+</p>
+
+________________________________________________________________________________________________________________________________________________________________________________
 
 <h2 align="center">
    <strong>ABOUT THIS PROJECT</strong>
@@ -29,12 +49,15 @@ ________________________________________________________________________________
 </h3>
 
 rake_new2 is a Python library that enables simple and fast keyword extraction
-from any text. As the name implies, this library works on the RAKE(Rapid
-Automatic Keyword Extraction) algorithm.
+from any text. This library helps beginners or those lost while finding keywords, understand 
+which keywords are more important.
 
-It tries to determine the key phrases in a text by calculating the
-co-occurrences of every word in a key phrase and also its frequency in the
-entire text.
+HOW IS THIS DIFFERENT FROM ANY OTHER ALGORITHM ? : This library gives you weights/scores along with each keyword/keyphrase.
+This helps you pick out the correct key-phrases. Just choose the ones with more weights.  
+
+¯\_(ツ)_/¯
+
+--> Psst! I tested it myself by writing my project abtract keywords using my library. The teacher hasn't thrown me out of her class yet, so yeah, this works. (ʘ ͜ʖ ʘ) 
 
 ![Demo](https://user-images.githubusercontent.com/49288068/88929310-97fc2400-d297-11ea-811a-79d986cdfee4.png)
 
