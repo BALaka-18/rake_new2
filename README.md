@@ -19,7 +19,7 @@ ________________________________________________________________________________
 
 
 <p align="center">
-   <strong> ------ ALL STUDENTS FOR THIS SEASON OF WoC HAVE BEEN SELECTED ALREADY. NO LONGER ACCEPTING PROPOSALS. ------ </strong> Head over to DevScript Winter of Code logo if you want to contribute. 
+   <strong> ---- ALL STUDENTS FOR THIS SEASON OF WoC HAVE BEEN SELECTED ALREADY. NO LONGER ACCEPTING PROPOSALS. ---- </strong> Head over to DevScript Winter of Code logo if you want to contribute. 
 </p>
 
 ________________________________________________________________________________________________________________________________________________________________________________
