@@ -57,7 +57,7 @@ This helps you pick out the correct key-phrases. Just choose the ones with more 
 
 ┐(︶▽︶)┌
 
---> Psst! I tested it myself by writing my project abtract keywords using my library. The teacher hasn't thrown me out of her class yet, so yeah, this works. (ʘ ͜ʖ ʘ) 
+--> Psst! I tested it myself by writing my project abtract keywords using my library. The teacher has approved, so yeah, this works. (ʘ ͜ʖ ʘ) 
 
 ![Demo](https://user-images.githubusercontent.com/49288068/88929310-97fc2400-d297-11ea-811a-79d986cdfee4.png)
 
