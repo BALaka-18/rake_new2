@@ -33,3 +33,5 @@
     pip install -r requirements.txt
 ### run the file using the command 
     python TopicModelling.py
+##### then  write the text which topic to be found and press enter
+##### enter the number of topics to be found and press enter again
