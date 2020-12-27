@@ -46,11 +46,15 @@ pyzmq==19.0.2
 rake-new2==1.0.5
 regex==2020.7.14
 requests==2.25.0
+scikit-learn==0.24.0
+scipy==1.5.4
 six==1.15.0
+sklearn==0.0
 spacy==2.3.5
 srsly==1.0.5
 textblob==0.15.3
 thinc==7.4.5
+threadpoolctl==2.1.0
 toml==0.10.2
 tornado==6.1
 tqdm==4.48.0
