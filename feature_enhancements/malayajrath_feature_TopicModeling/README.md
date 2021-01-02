@@ -35,3 +35,5 @@
     python TopicModelling.py
 ##### then  write the text which topic to be found and press enter
 ##### enter the number of topics to be found and press enter again
+##### Sample
+![topic modelling](https://github.com/malayaj2000/rake_new2/blob/feature-addition/feature_enhancements/malayajrath_feature_TopicModeling/topicModelling.png)
