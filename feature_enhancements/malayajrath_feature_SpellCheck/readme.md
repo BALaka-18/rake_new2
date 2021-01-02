@@ -25,3 +25,5 @@
     pip install -r requirements.txt
 ### run the file using the command 
     python spell check.py
+    enter a statement with incorrect spelling and hit enter
+### Sample 
