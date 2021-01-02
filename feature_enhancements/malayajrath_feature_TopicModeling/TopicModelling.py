@@ -1,5 +1,6 @@
 def preprocessing(doc):
     import re
+
     import nltk
 
     nltk.download("stopwords")

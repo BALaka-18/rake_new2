@@ -30,7 +30,7 @@ def main():
 
 
 if __name__ == "__main__":
-    from textblob import TextBlob
     import spacy
+    from textblob import TextBlob
 
     main()
