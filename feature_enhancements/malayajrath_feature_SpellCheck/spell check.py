@@ -1,7 +1,7 @@
 def processing(text):
     nlp = spacy.load("en_core_web_sm")
     doc2 = nlp(text)
-    persons = [ent.text for ent in doc2.ents if ent.label_ == 'PERSON']
+    persons = [ent.text for ent in doc2.ents if ent.label_ == "PERSON"]
 
     return persons
 
@@ -32,4 +32,5 @@ def main():
 if __name__ == "__main__":
     from textblob import TextBlob
     import spacy
+
     main()
