@@ -18,10 +18,10 @@
     4. Obtain topics and top words related to  the topics by sorting it according to the probability of belonging to the topic.
 
 ### 24 Dec 2020
-#### Pseudo code was prepared and a preliminary model containing 3 functions  main( ) , preprocessing( ) and topic_modelling( ) was made .
-#### main( ) mainly take basic input like document text  and the number of topics to  be displayed .
-#### preprocessing( ) preprocess the text like removing the stopwords and special characters. 
-#### topic_modelling( ) vectorize the text and form document term  matrix and pass it to  LDA function to  produce topics and top word belonging to  the topic. 
+#### Pseudo code was prepared and a preliminary model containing 3 functions  `main( )` , `preprocessing( )` and `topic_modelling( )` was made .
+#### `main( )` mainly take basic input like document text  and the number of topics to  be displayed .
+#### `preprocessing( )` preprocess the text like removing the stopwords and special characters. 
+#### `topic_modelling( )` vectorize the text and form document term  matrix and pass it to  LDA function to  produce topics and top word belonging to  the topic. 
  
 ### 26 Dec 2020 
 #### Final model was made . 
