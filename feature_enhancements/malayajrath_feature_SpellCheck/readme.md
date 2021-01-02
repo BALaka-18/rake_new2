@@ -27,3 +27,4 @@
     python spell check.py
     enter a statement with incorrect spelling and hit enter
 ### Sample 
+![spell_checker](https://github.com/malayaj2000/rake_new2/blob/feature-addition/feature_enhancements/malayajrath_feature_SpellCheck/spell%20checker.png)
