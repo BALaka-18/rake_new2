@@ -25,11 +25,11 @@ NOTE : MAKE SURE YOU'VE FOLLOWED THE FILE NAMING OR FOLDER NAMING CONVENTIONS
 
 To make a PR, just follow these steps :
 
-    a. Stage your changes : ```git add .```
+    a. Stage your changes : git add .
     
-    b. Commit your changes : ```git commit -m "<proper commit message>"```
+    b. Commit your changes : git commit -m "<proper commit message>"
     
-    c. Push them to your forked repository : ```git push origin DWOC-contributions```
+    c. Push them to your forked repository : git push origin DWOC-contributions
     
     d. Go to your forked repository and refresh, you'll receive a prompt to create a PR. Make sure you write a proper PR description, else, your PR will be rejected.
     
