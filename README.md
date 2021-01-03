@@ -149,3 +149,12 @@ Please make sure to update tests as appropriate.
 ### Beta Tester
 
 Sankha Subhra Mondal
+
+### Contributors
+
+|    Student Name    |  GitHub ID | Merged PR No. | Open source programme name | If DWOC, level of PR |
+|:------------------:|:----------:|:-------------:|:--------------------------:|:--------------------:|
+| Sabarish Rajamohan | [sabarish98](https://github.com/sabarish98) |      [#16](https://github.com/BALaka-18/rake_new2/pull/16)      |        Hacktoberfest       |          --          |
+|      Soham Kar     |  [2bit-hack](https://github.com/2bit-hack) |      [#20](https://github.com/BALaka-18/rake_new2/pull/20)      |        Hacktoberfest       |          --          |
+|     Jawen Voon     |   [jawsvk](https://github.com/jawsvk)   |      [#26](https://github.com/BALaka-18/rake_new2/pull/26)      |        Hacktoberfest       |          --          |
+|      Ananthakrishnan Nair RS     |      [akrish4](https://github.com/akrish4)     |      [#47](https://github.com/BALaka-18/rake_new2/pull/47)   |      DWOC   |      Level-1       |
