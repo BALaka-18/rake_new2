@@ -36,5 +36,8 @@ To make a PR, just follow these steps :
     e. Wait for the maintainer to review your PR.
 _____________________________________________________________________________________________________________________________________________________________________________________________
 
+Read the [Code of Conduct](https://github.com/BALaka-18/rake_new2/blob/master/CODE_OF_CONDUCT.md)
+
+
 #### HAPPY CONTRIBUTING !! 
 
