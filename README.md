@@ -142,6 +142,9 @@ discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
+Read the [Code of Conduct](https://github.com/BALaka-18/rake_new2/blob/master/CODE_OF_CONDUCT.md)
+
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
