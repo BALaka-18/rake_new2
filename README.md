@@ -1,7 +1,7 @@
 [![PyPI](https://img.shields.io/pypi/v/rake_new2)](https://pypi.org/project/rake-new2/)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/rake_new2)
 [![GitHub](https://img.shields.io/github/license/BALaka-18/rake_new2)](https://github.com/BALaka-18/rake_new2/blob/master/LICENSE.txt)
-![Maintenance](https://img.shields.io/maintenance/yes/2020)
+![Maintenance](https://img.shields.io/maintenance/yes/2021)
 
 [![GitHub issues](https://img.shields.io/github/issues/BALaka-18/rake_new2)](https://github.com/BALaka-18/rake_new2/issues)
 [![GitHub forks](https://img.shields.io/github/forks/BALaka-18/rake_new2?style=social)](https://github.com/BALaka-18/rake_new2/network/members)
