@@ -63,9 +63,10 @@ def build_model():
 
     model.build_vocab(word_vector, progress_per=10000)
 
-    model.train(
-        word_vector, total_examples=model.corpus_count, epochs=30, report_delay=1
-    )
+    model.train(word_vector,
+                total_examples=model.corpus_count,
+                epochs=30,
+                report_delay=1)
 
     model.init_sims(replace=True)
 
