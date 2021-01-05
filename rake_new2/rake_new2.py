@@ -7,14 +7,6 @@ import nltk
 '''nltk.download('stopwords')
 nltk.download('punkt')'''
 from nltk.tokenize import wordpunct_tokenize
- 
-'''WHY USE wordpunct_tokenize INSTEAD OF word_tokenize ?
--> Example :
-Say, text = "You're silly"
->> word_tokenize(text) --> ["You","'re","silly"]
->> wordpunct_tokenize(text) --> ["You","'","re","silly"]
- 
-Hence, wordpunct_tokenize > word_tokenize'''
 
 # the Rake() class
 class Rake():
@@ -85,7 +77,7 @@ class Rake():
   # (4)
   def build_word2word_matrix(self,phrase_list):
     # Initialize blank graph
-    template_graph = defaultdict(lambda : defaultdict(lambda : 0))    # Initialize all score counts to zero
+    template_graph = defaultdict(lambda : defaultdict(lambda : 0))
     # Loop through each keyword sequence
     for kw in phrase_list:
       for (w,cw) in product(kw,kw):
@@ -93,7 +85,7 @@ class Rake():
     # Initialize per word degree
     self.degree = defaultdict(lambda : 0)
     for key in template_graph:
-      self.degree[key] = sum(template_graph[key].values())      # For explanation, visit the link memtioned in the README
+      self.degree[key] = sum(template_graph[key].values())
   # (5)
   def get_ranklist(self,phrase_list):
     self.ranklist = []
@@ -101,10 +93,11 @@ class Rake():
       rank = 0.0
       for word in kw:
         rank += self.degree[word]/self.freq_dist[word]
+      rank = round(rank,1)
       self.ranklist.append((rank, " ".join(kw)))
-    # Sorting in descending order of ranks and preparing keywords + scores
+    # Return keywords in descending order of their ranks
+    self.ranklist = sorted(self.ranklist,key=lambda x: x[0],reverse=True)
     self.ranked_kw = [kwd[1] for kwd in self.ranklist]
-
 
   # USER ACCESSIBLE FUNCTIONS
   # (A)
