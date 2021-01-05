@@ -15,4 +15,4 @@ def analyze_sentiment(text):
         print('Neutral : ' + str(score['neu']*100) + '%')
 
 
-analyze_sentiment('This book by Devdutt Pattanaik is op!!!')
+analyze_sentiment('I love the food here!')

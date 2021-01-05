@@ -1,8 +1,11 @@
 import re
 from re import sub
+import pandas as pd
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize,sent_tokenize
+from gensim.models import Word2Vec
+import multiprocessing
 
 def text_preprocess(text):
     text = str(text)
@@ -32,18 +35,25 @@ def file_preprocess():
     sent_list = file1.readlines()
     sent_list = [re.sub(r"\n"," ",x) for x in sent_list]
 
-    #text = ""
-    #for x in sent_list:
-     #   text = text + x
-    
-    #sentences = sent_tokenize(text)
-
     word_vec = [text_preprocess(sent) for sent in sent_list]
     word_vec = [sent for sent in word_vec if len(sent)>0]
     return word_vec
 
 
+def build_model():
 
-vector = file_preprocess()
+    word_vector = file_preprocess()
 
-print(vector[0:5])
+    cores = multiprocessing.cpu_count()
+
+    model = Word2Vec(min_count=20,window=2,size=300,sample=6e-5,alpha=0.03,min_alpha=0.0007,negative=20,workers=cores-1)
+
+    model.build_vocab(word_vector,progress_per=10000)
+
+    model.train(word_vector,total_examples=model.corpus_count,epochs=30,report_delay=1)
+
+    model.init_sims(replace=True)
+
+    model.save("word2vec.model")
+
+build_model()

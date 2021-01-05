@@ -14,3 +14,17 @@ Created an initial sentiment analysis feature for the package, by using the VADE
 19/12/2020
 
 Trained and created the Word2Vec model for further use to cluster and predict the sentiments of user-provided texts.
+
+23/12/2020
+
+Created the Word2Vec model on the corpus that had been created previously on the text corpus.
+
+24/12/2020
+
+Trained the Word2Vec model on the corpus. Started work on the clustering on the model.
+
+02/01/2021
+Created the clusters using sklearn's KMeans clustering and calculated the approximate sentiment coefficients for different keywords in the model.
+
+03/01/2021
+Completed the prediction on the entire corpus of the input text
