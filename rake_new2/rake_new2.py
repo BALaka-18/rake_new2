@@ -129,54 +129,15 @@ class Rake():
     return self.degree
 
 
-'''# Test run cases
-text = "Red apples are good in taste."
-rake = Rake()
-rake.get_keywords_from_raw_text(text)
-kw_s = rake.get_keywords_with_scores()
-kw = rake.get_ranked_keywords()
-f = rake.get_word_freq()
-deg = rake.get_kw_degree()
-print(deg)
-text = "<h1> Hello world !</h1>"
-text2 = "<span> Hi Rahul. Hello rahul, say hi to rahul.</span><p> See, Rahul says hello, you should say hello to rahul !</p>"
-text3 = "Keyword extraction is not that difficult after all. There are many libraries that can help you with keyword extraction. Rapid automatic keyword extraction is one of those."
-
-rake1,rake2,rake3,rake4,rake5 = Rake(keep_html_tags=True),Rake(keep_html_tags=False),Rake(keep_html_tags=True),Rake(keep_html_tags=False),Rake(keep_html_tags=False)
-print("\nTYPE I : ORIGINAL TEXT : {}".format(text))
-# Case 1
-rake1.get_keywords_from_raw_text(text)
-kw_s1 = rake1.get_keywords_with_scores()
-kw1 = rake1.get_ranked_keywords()
-print("Keeping the tags : ",kw1)
-# Case 2
-rake2.get_keywords_from_raw_text(text)
-kw_s2 = rake2.get_keywords_with_scores()
-kw2 = rake2.get_ranked_keywords()
-print("Eliminating the tags : ",kw2)
-print("\nTYPE II : ORIGINAL TEXT : {}".format(text2))
-# Case 3
-rake3.get_keywords_from_raw_text(text2)
-kw_s3 = rake3.get_keywords_with_scores()
-kw3 = rake3.get_ranked_keywords()
-print("Keeping the tags : ",kw3)
-# Case 4
-rake4.get_keywords_from_raw_text(text2)
-kw_s4 = rake4.get_keywords_with_scores()
-kw4 = rake4.get_ranked_keywords()
-print("Eliminating the tags : ",kw4)'''
-
-
+# Test run
 if __name__ == '__main__':
   test_text = TEST_TEXT
   rake_obj = Rake(keep_html_tags=False)
   # Fit the algorithm on the text
   rake_obj.get_keywords_from_raw_text(test_text)
-  
+
   # Showing the actual working of the library
   # Get only keywords, arranged in descending order of their importance
   print("RANKED KEYWORDS : \n{}".format(rake_obj.get_ranked_keywords()))
   # Get scores along with keywords, sorted in descending order of degree scores
   print("\n\nRANKED KEYWORDS WITH SCORES : \n{}".format(rake_obj.get_keywords_with_scores()))
-  
-
