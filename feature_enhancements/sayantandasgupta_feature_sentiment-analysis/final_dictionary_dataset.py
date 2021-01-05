@@ -1,7 +1,8 @@
 import re
 from re import sub
-from sklearn.feature_extraction.text import TfidfVectorizer
+
 import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 def file_preprocess():

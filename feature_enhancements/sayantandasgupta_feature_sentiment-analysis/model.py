@@ -1,11 +1,12 @@
+import multiprocessing
 import re
 from re import sub
-import pandas as pd
+
 import nltk
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize, sent_tokenize
+import pandas as pd
 from gensim.models import Word2Vec
-import multiprocessing
+from nltk.corpus import stopwords
+from nltk.tokenize import sent_tokenize, word_tokenize
 
 
 def text_preprocess(text):
