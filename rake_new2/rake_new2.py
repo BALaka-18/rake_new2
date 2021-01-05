@@ -1,12 +1,15 @@
 # Import libraries
-import string
-import re
+import string,re
+from constants import TEST_TEXT
 from collections import Counter,defaultdict
 from itertools import groupby,product,chain
 import nltk
-'''nltk.download('stopwords')
-nltk.download('punkt')'''
 from nltk.tokenize import wordpunct_tokenize
+
+'''
+nltk.download('stopwords')
+nltk.download('punkt')
+'''
 
 # the Rake() class
 class Rake():
@@ -102,18 +105,28 @@ class Rake():
   # USER ACCESSIBLE FUNCTIONS
   # (A)
   def get_ranked_keywords(self):
-    return set(self.ranked_kw)
+    final_keywords = []
+    for keyword in self.ranked_kw:
+      if keyword in final_keywords:
+        continue
+      else:
+        final_keywords.append(keyword)
+    return final_keywords
   # (B)
   def get_keywords_with_scores(self):
-    return set(self.ranklist)
+    final_scored_keywords = []
+    for score_tuple in self.ranklist:
+      if score_tuple in final_scored_keywords:
+        continue
+      else:
+        final_scored_keywords.append(score_tuple)
+    return final_scored_keywords
   # (C)
   def get_word_freq(self):
     return self.freq_dist
   # (D)
   def get_kw_degree(self):
     return self.degree
-  def p(self):
-    print()
 
 
 '''# Test run cases
@@ -152,3 +165,18 @@ rake4.get_keywords_from_raw_text(text2)
 kw_s4 = rake4.get_keywords_with_scores()
 kw4 = rake4.get_ranked_keywords()
 print("Eliminating the tags : ",kw4)'''
+
+
+if __name__ == '__main__':
+  test_text = TEST_TEXT
+  rake_obj = Rake(keep_html_tags=False)
+  # Fit the algorithm on the text
+  rake_obj.get_keywords_from_raw_text(test_text)
+  
+  # Showing the actual working of the library
+  # Get only keywords, arranged in descending order of their importance
+  print("RANKED KEYWORDS : \n{}".format(rake_obj.get_ranked_keywords()))
+  # Get scores along with keywords, sorted in descending order of degree scores
+  print("\n\nRANKED KEYWORDS WITH SCORES : \n{}".format(rake_obj.get_keywords_with_scores()))
+  
+
