@@ -1,11 +1,11 @@
-14/12/2020 
+14/12/2020
 
-Setup the local environment for development. 
+Setup the local environment for development.
 Started to work on the preprocessing part of the dataset. The dataset is being used for the Word2Vec model.
 
 16/12/2020
 
-Completed the preprocessing part for the dataset. The entire corpus is ready to train and create the Word2Vec model for sentiment analysis. 
+Completed the preprocessing part for the dataset. The entire corpus is ready to train and create the Word2Vec model for sentiment analysis.
 
 18/12/2020
 
