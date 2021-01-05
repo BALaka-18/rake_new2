@@ -6,7 +6,8 @@ import nltk
 import pandas as pd
 from gensim.models import Word2Vec
 from nltk.corpus import stopwords
-from nltk.tokenize import sent_tokenize, word_tokenize
+from nltk.tokenize import sent_tokenize
+from nltk.tokenize import word_tokenize
 
 
 def text_preprocess(text):
