@@ -12,7 +12,7 @@ def text_preprocess(text):
     text = str(text)
     text = text.lower()
 
-    stop_words = stopwords.words('english')
+    stop_words = stopwords.words("english")
 
     # clean the text
 
@@ -48,13 +48,22 @@ def build_model():
 
     cores = multiprocessing.cpu_count()
 
-    model = Word2Vec(min_count=20, window=2, size=300, sample=6e-5,
-                     alpha=0.03, min_alpha=0.0007, negative=20, workers=cores-1)
+    model = Word2Vec(
+        min_count=20,
+        window=2,
+        size=300,
+        sample=6e-5,
+        alpha=0.03,
+        min_alpha=0.0007,
+        negative=20,
+        workers=cores - 1,
+    )
 
     model.build_vocab(word_vector, progress_per=10000)
 
-    model.train(word_vector, total_examples=model.corpus_count,
-                epochs=30, report_delay=1)
+    model.train(
+        word_vector, total_examples=model.corpus_count, epochs=30, report_delay=1
+    )
 
     model.init_sims(replace=True)
 

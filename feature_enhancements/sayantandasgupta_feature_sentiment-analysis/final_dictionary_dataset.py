@@ -15,20 +15,23 @@ def create_tfidf():
     dataset = file_preprocess()
     tfIdfVectorizer = TfidfVectorizer(use_idf=True)
     tfIdf = tfIdfVectorizer.fit_transform(dataset)
-    df = pd.DataFrame(tfIdf[0].T.todense(
-    ), index=tfIdfVectorizer.get_feature_names(), columns=["TF-IDF"])
-    df = df.sort_values('TF-IDF', ascending=False)
-    df.to_csv('tfidf_dict.csv', index=False)
+    df = pd.DataFrame(
+        tfIdf[0].T.todense(),
+        index=tfIdfVectorizer.get_feature_names(),
+        columns=["TF-IDF"],
+    )
+    df = df.sort_values("TF-IDF", ascending=False)
+    df.to_csv("tfidf_dict.csv", index=False)
 
 
 create_tfidf()
 
-sent_dict = pd.read_csv('sent_dictionary.csv')
+sent_dict = pd.read_csv("sent_dictionary.csv")
 
-df = pd.read_csv('tfidf_dict.csv')
+df = pd.read_csv("tfidf_dict.csv")
 
-sent_dict['TFIDF'] = [df['TF-IDF'].word for word in sent_dict.keywords]
+sent_dict["TFIDF"] = [df["TF-IDF"].word for word in sent_dict.keywords]
 
 sent_dict.head()
 
-sent_dict.to_csv('final_dict.csv', index=False)
+sent_dict.to_csv("final_dict.csv", index=False)
