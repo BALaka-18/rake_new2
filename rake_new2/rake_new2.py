@@ -1,20 +1,15 @@
 # Import libraries
-import string
-import re
+import string,re
+from constants import TEST_TEXT
 from collections import Counter,defaultdict
 from itertools import groupby,product,chain
 import nltk
-'''nltk.download('stopwords')
-nltk.download('punkt')'''
 from nltk.tokenize import wordpunct_tokenize
- 
-'''WHY USE wordpunct_tokenize INSTEAD OF word_tokenize ?
--> Example :
-Say, text = "You're silly"
->> word_tokenize(text) --> ["You","'re","silly"]
->> wordpunct_tokenize(text) --> ["You","'","re","silly"]
- 
-Hence, wordpunct_tokenize > word_tokenize'''
+
+'''
+nltk.download('stopwords')
+nltk.download('punkt')
+'''
 
 # the Rake() class
 class Rake():
@@ -84,7 +79,7 @@ class Rake():
   # (4)
   def build_word2word_matrix(self,phrase_list):
     # Initialize blank graph
-    template_graph = defaultdict(lambda : defaultdict(lambda : 0))    # Initialize all score counts to zero
+    template_graph = defaultdict(lambda : defaultdict(lambda : 0))
     # Loop through each keyword sequence
     for kw in phrase_list:
       for (w,cw) in product(kw,kw):
@@ -92,7 +87,7 @@ class Rake():
     # Initialize per word degree
     self.degree = defaultdict(lambda : 0)
     for key in template_graph:
-      self.degree[key] = sum(template_graph[key].values())      # For explanation, visit the link memtioned in the README
+      self.degree[key] = sum(template_graph[key].values())
   # (5)
   def get_ranklist(self,phrase_list):
     self.ranklist = []
@@ -100,62 +95,52 @@ class Rake():
       rank = 0.0
       for word in kw:
         rank += self.degree[word]/self.freq_dist[word]
+      rank = round(rank,1)
       self.ranklist.append((rank, " ".join(kw)))
-    # Sorting in descending order of ranks and preparing keywords + scores
+    # Return keywords in descending order of their ranks
+    self.ranklist = sorted(self.ranklist,key=lambda x: x[0],reverse=True)
     self.ranked_kw = [kwd[1] for kwd in self.ranklist]
-
 
   # USER ACCESSIBLE FUNCTIONS
   # (A)
   def get_ranked_keywords(self):
-    return set(self.ranked_kw)
+    final_keywords = []
+    for keyword in self.ranked_kw:
+      if keyword in final_keywords:
+        continue
+      else:
+        final_keywords.append(keyword)
+    return final_keywords
   # (B)
   def get_keywords_with_scores(self):
-    return set(self.ranklist)
+    final_scored_keywords = []
+    for score_tuple in self.ranklist:
+      if score_tuple in final_scored_keywords:
+        continue
+      else:
+        final_scored_keywords.append(score_tuple)
+    return final_scored_keywords
   # (C)
   def get_word_freq(self):
     return self.freq_dist
   # (D)
   def get_kw_degree(self):
     return self.degree
+
   @staticmethod
   def p():
     print()
 
 
-'''# Test run cases
-text = "Red apples are good in taste."
-rake = Rake()
-rake.get_keywords_from_raw_text(text)
-kw_s = rake.get_keywords_with_scores()
-kw = rake.get_ranked_keywords()
-f = rake.get_word_freq()
-deg = rake.get_kw_degree()
-print(deg)
-text = "<h1> Hello world !</h1>"
-text2 = "<span> Hi Rahul. Hello rahul, say hi to rahul.</span><p> See, Rahul says hello, you should say hello to rahul !</p>"
-text3 = "Keyword extraction is not that difficult after all. There are many libraries that can help you with keyword extraction. Rapid automatic keyword extraction is one of those."
+# Test run
+if __name__ == '__main__':
+  test_text = TEST_TEXT
+  rake_obj = Rake(keep_html_tags=False)
+  # Fit the algorithm on the text
+  rake_obj.get_keywords_from_raw_text(test_text)
 
-rake1,rake2,rake3,rake4,rake5 = Rake(keep_html_tags=True),Rake(keep_html_tags=False),Rake(keep_html_tags=True),Rake(keep_html_tags=False),Rake(keep_html_tags=False)
-print("\nTYPE I : ORIGINAL TEXT : {}".format(text))
-# Case 1
-rake1.get_keywords_from_raw_text(text)
-kw_s1 = rake1.get_keywords_with_scores()
-kw1 = rake1.get_ranked_keywords()
-print("Keeping the tags : ",kw1)
-# Case 2
-rake2.get_keywords_from_raw_text(text)
-kw_s2 = rake2.get_keywords_with_scores()
-kw2 = rake2.get_ranked_keywords()
-print("Eliminating the tags : ",kw2)
-print("\nTYPE II : ORIGINAL TEXT : {}".format(text2))
-# Case 3
-rake3.get_keywords_from_raw_text(text2)
-kw_s3 = rake3.get_keywords_with_scores()
-kw3 = rake3.get_ranked_keywords()
-print("Keeping the tags : ",kw3)
-# Case 4
-rake4.get_keywords_from_raw_text(text2)
-kw_s4 = rake4.get_keywords_with_scores()
-kw4 = rake4.get_ranked_keywords()
-print("Eliminating the tags : ",kw4)'''
+  # Showing the actual working of the library
+  # Get only keywords, arranged in descending order of their importance
+  print("RANKED KEYWORDS : \n{}".format(rake_obj.get_ranked_keywords()))
+  # Get scores along with keywords, sorted in descending order of degree scores
+  print("\n\nRANKED KEYWORDS WITH SCORES : \n{}".format(rake_obj.get_keywords_with_scores()))

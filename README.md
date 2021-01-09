@@ -1,7 +1,7 @@
 [![PyPI](https://img.shields.io/pypi/v/rake_new2)](https://pypi.org/project/rake-new2/)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/rake_new2)
 [![GitHub](https://img.shields.io/github/license/BALaka-18/rake_new2)](https://github.com/BALaka-18/rake_new2/blob/master/LICENSE.txt)
-![Maintenance](https://img.shields.io/maintenance/yes/2020)
+![Maintenance](https://img.shields.io/maintenance/yes/2021)
 
 [![GitHub issues](https://img.shields.io/github/issues/BALaka-18/rake_new2)](https://github.com/BALaka-18/rake_new2/issues)
 [![GitHub forks](https://img.shields.io/github/forks/BALaka-18/rake_new2?style=social)](https://github.com/BALaka-18/rake_new2/network/members)
@@ -149,3 +149,12 @@ Please make sure to update tests as appropriate.
 ### Beta Tester
 
 Sankha Subhra Mondal
+
+### Contributors
+
+|    Student Name    |  GitHub ID | Merged PR No. | Open source programme name | If DWOC, level of PR |
+|:------------------:|:----------:|:-------------:|:--------------------------:|:--------------------:|
+| Sabarish Rajamohan | [sabarish98](https://github.com/sabarish98) |      [#16](https://github.com/BALaka-18/rake_new2/pull/16)      |        Hacktoberfest       |          --          |
+|      Soham Kar     |  [2bit-hack](https://github.com/2bit-hack) |      [#20](https://github.com/BALaka-18/rake_new2/pull/20)      |        Hacktoberfest       |          --          |
+|     Jawen Voon     |   [jawsvk](https://github.com/jawsvk)   |      [#26](https://github.com/BALaka-18/rake_new2/pull/26)      |        Hacktoberfest       |          --          |
+|      Ananthakrishnan Nair RS     |      [akrish4](https://github.com/akrish4)     |      [#47](https://github.com/BALaka-18/rake_new2/pull/47)   |      DWOC   |      Level-1       |
