@@ -1,10 +1,11 @@
 # Import libraries
-import string
 import re
-from constants import TEST_TEXT
+import string
 from collections import Counter, defaultdict
-from itertools import groupby, product, chain
+from itertools import chain, groupby, product
+
 import nltk
+from constants import TEST_TEXT
 from nltk.tokenize import wordpunct_tokenize
 
 """
