@@ -1,8 +1,11 @@
 # Import libraries
 import re
 import string
-from collections import Counter, defaultdict
-from itertools import chain, groupby, product
+from collections import Counter
+from collections import defaultdict
+from itertools import chain
+from itertools import groupby
+from itertools import product
 
 import nltk
 from constants import TEST_TEXT
