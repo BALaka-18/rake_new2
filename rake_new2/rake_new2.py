@@ -68,8 +68,7 @@ class Rake():
         if val in string.punctuation:
           ignore_final.append(elem)
           break
-        else:
-          continue
+        continue
     ignore_final = ignore_final + self.ignore_list
     filtered_groups = groupby(word_list,lambda x : x not in ignore_final)
     keywords_list = [list(grp[1]) for grp in filtered_groups if grp[0]]
@@ -127,6 +126,10 @@ class Rake():
   # (D)
   def get_kw_degree(self):
     return self.degree
+
+  @staticmethod
+  def p():
+    print()
 
 
 # Test run
