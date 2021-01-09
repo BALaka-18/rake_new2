@@ -158,3 +158,4 @@ Sankha Subhra Mondal
 |      Soham Kar     |  [2bit-hack](https://github.com/2bit-hack) |      [#20](https://github.com/BALaka-18/rake_new2/pull/20)      |        Hacktoberfest       |          --          |
 |     Jawen Voon     |   [jawsvk](https://github.com/jawsvk)   |      [#26](https://github.com/BALaka-18/rake_new2/pull/26)      |        Hacktoberfest       |          --          |
 |      Ananthakrishnan Nair RS     |      [akrish4](https://github.com/akrish4)     |      [#47](https://github.com/BALaka-18/rake_new2/pull/47)   |      DWOC   |      Level-1       |
+|      Tushar Nankani       |      [tusharnankani](https://github.com/tusharnankani)       |      [#43](https://github.com/BALaka-18/rake_new2/pull/43)   |      DWOC   |      Level-3       |
