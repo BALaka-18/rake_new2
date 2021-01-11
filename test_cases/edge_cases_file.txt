@@ -50,7 +50,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 <hgroup>Hello World:</hgroup>
 <hr />
 <html>Hello World:</html>
-<i>Hello World:</i>
+<i>Hello World</i>
 <iframe>Hello World:</iframe>
 <ins>Hello World:</ins>
 <isindex>Hello World:</isindex>
@@ -61,7 +61,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 <map>Hello World</map>
 <mark>Hello World</mark>
 <menu>Hello World</menu>
-<meta>Hello World</menu>
+<meta name="author" content="John Doe">
 <meter>Hello World</meter>
 <nav>Hello World</nav>
 <noframes>Hello World</noframes>
@@ -79,7 +79,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 <rp>Hello World</rp>
 <rt>Hello World</rt>
 <ruby>Hello World</ruby>
-<s>Hello World</s>
+<p><s> Hello World </s></p>
 <samp>Hello World</samp>
 <section>Hello World</section>
 <select>Hello World</select>
