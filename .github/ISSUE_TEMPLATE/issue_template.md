@@ -1,12 +1,3 @@
----
-name: ISSUE_TEMPLATE
-about: Raise any Issue
-title: ''
-labels: ''
-assignees: BALaka-18
-
----
-
 ## Description
 Clear this text to describe your Issue.
 
