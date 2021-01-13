@@ -7,28 +7,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/BALaka-18/rake_new2?style=social)](https://github.com/BALaka-18/rake_new2/network/members)
 [![GitHub stars](https://img.shields.io/github/stars/BALaka-18/rake_new2?style=social)](https://github.com/BALaka-18/rake_new2/stargazers)
 
-________________________________________________________________________________________________________________________________________________________________________________
-
-<p align="center">
-       <img src="https://miro.medium.com/max/1282/1*M6NUbP09lwQpaTcywBzU7w.png" alt="WoC logo" width="720" height="300" />
-</p>
-
-<p align="center">
-   <strong>WINTER OF CODE 2020 PROJECT IDEAS FOR rake_new2 : <a href = "https://github.com/dsc-iem/WoC-Project-Ideas#rake_new2">Read all project ideas here</a></strong>
-</p>
-
-
-<p align="center">
-   <strong> ---- ALL STUDENTS FOR THIS SEASON OF WoC HAVE BEEN SELECTED ALREADY. NO LONGER ACCEPTING PROPOSALS. ---- </strong> Head over to DevScript Winter of Code logo if you want to contribute. 
-</p>
-
-________________________________________________________________________________________________________________________________________________________________________________
-
-<p align="center">
-   <strong> --- AND --- </strong>
-</p>
-
-________________________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________________
 
 <p align="center">
        <img src="https://devscript.tech/woc/img/WOC-logo.png" alt="DWoC logo" width="300" height="300" />
