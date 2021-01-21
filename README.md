@@ -7,7 +7,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/BALaka-18/rake_new2?style=social)](https://github.com/BALaka-18/rake_new2/network/members)
 [![GitHub stars](https://img.shields.io/github/stars/BALaka-18/rake_new2?style=social)](https://github.com/BALaka-18/rake_new2/stargazers)
 
-________________________________________________________________________________________________________________________________________________________________________________
+---
 
 <p align="center">
        <img src="https://miro.medium.com/max/1282/1*M6NUbP09lwQpaTcywBzU7w.png" alt="WoC logo" width="720" height="300" />
@@ -17,18 +17,17 @@ ________________________________________________________________________________
    <strong>WINTER OF CODE 2020 PROJECT IDEAS FOR rake_new2 : <a href = "https://github.com/dsc-iem/WoC-Project-Ideas#rake_new2">Read all project ideas here</a></strong>
 </p>
 
-
 <p align="center">
    <strong> ---- ALL STUDENTS FOR THIS SEASON OF WoC HAVE BEEN SELECTED ALREADY. NO LONGER ACCEPTING PROPOSALS. ---- </strong> Head over to DevScript Winter of Code logo if you want to contribute. 
 </p>
 
-________________________________________________________________________________________________________________________________________________________________________________
+---
 
 <p align="center">
    <strong> --- AND --- </strong>
 </p>
 
-________________________________________________________________________________________________________________________________________________________________________________
+---
 
 <p align="center">
        <img src="https://devscript.tech/woc/img/WOC-logo.png" alt="DWoC logo" width="300" height="300" />
@@ -38,7 +37,7 @@ ________________________________________________________________________________
    <strong>WINTER OF CODE 2020 PROJECT IDEAS FOR rake_new2 : <a href = "https://github.com/BALaka-18/rake_new2/issues?q=is%3Aissue+is%3Aopen+label%3ADWOC">See all updated and open Issues here. </a></strong> Comment to get assigned. Assignment is based on FCFS(First Come, First Serve) basis or based on better proposal/idea/worklflow.
 </p>
 
-________________________________________________________________________________________________________________________________________________________________________________
+---
 
 <h2 align="center">
    <strong>ABOUT THIS PROJECT</strong>
@@ -49,15 +48,17 @@ ________________________________________________________________________________
 </h3>
 
 rake_new2 is a Python library that enables simple and fast keyword extraction
-from any text. This library helps beginners or those lost while finding keywords, understand 
-which keywords are more important.
+from any text. This library helps beginners or those lost while finding
+keywords, understand which keywords are more important.
 
-HOW IS THIS DIFFERENT FROM ANY OTHER ALGORITHM ? : This library gives you weights/scores along with each keyword/keyphrase.
-This helps you pick out the correct key-phrases. Just choose the ones with more weights.  
+HOW IS THIS DIFFERENT FROM ANY OTHER ALGORITHM ? : This library gives you
+weights/scores along with each keyword/keyphrase. This helps you pick out the
+correct key-phrases. Just choose the ones with more weights.
 
 ┐(︶▽︶)┌
 
---> Psst! I tested it myself by writing my project abtract keywords using my library. The teacher has approved, so yeah, this works. (ʘ ͜ʖ ʘ) 
+--> Psst! I tested it myself by writing my project abtract keywords using my
+library. The teacher has approved, so yeah, this works. (ʘ ͜ʖ ʘ)
 
 ![Demo](https://user-images.githubusercontent.com/49288068/88929310-97fc2400-d297-11ea-811a-79d986cdfee4.png)
 
@@ -141,7 +142,6 @@ Pull requests are welcome. For major changes, please open an issue first to
 discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
-
 
 ## License
 
