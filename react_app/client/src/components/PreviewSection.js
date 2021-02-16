@@ -16,16 +16,20 @@ const PreviewSection = () => {
                         </MDBAnimation>
 
                         <MDBAnimation type='fadeInUp' delay='1.4s'>
-                            <hr className='hr-light' />
+                            <hr className='hr-violet' />
                             <p className='mb-4 rake-info text-justify'>
                                 Rapid Automatic Keyword Extraction (RAKE) is a well-known keyword extraction method that uses a list of stopwords and phrase delimiters to detect the most relevant words or phrases in a piece of text
                             </p>
                         </MDBAnimation>
 
                         <MDBAnimation type='fadeInUp' delay='2s'>
-                            <MDBBtn className='btn-round'><MDBIcon fab icon='python' className='mr-1' size='2x' />View on PyPI</MDBBtn>
-                            <MDBBtn outline className='btn-outline-round' color='white'>
+                            <a href='https://pypi.org/project/rake-new2/' rel='noreferrer' target='_blank'>
+                                <MDBBtn className='btn-round'><MDBIcon fab icon='python' className='mr-1' size='2x' />View on PyPI</MDBBtn>
+                            </a>
+                            <a href='https://github.com/BALaka-18/rake_new2' target='_blank' rel='noreferrer'>
+                                <MDBBtn outline className='btn-outline-round' color='white'>
                                 <MDBIcon fab icon='github' className='mr-1' size='2x' />view on github</MDBBtn>
+                            </a>
                         </MDBAnimation>
                     </MDBCol>
 
@@ -39,7 +43,7 @@ const PreviewSection = () => {
                     </MDBCol>
                 </MDBRow>
             </MDBContainer>
-        </MDBView>
+        </MDBView >
     )
 }
 
