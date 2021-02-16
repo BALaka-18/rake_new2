@@ -1,8 +1,10 @@
-from flask import Flask, redirect, url_for, request, jsonify
-from flask_cors import CORS, cross_origin
-from rake_new2 import Rake
 import os
 import sys
+
+from flask import Flask, jsonify, redirect, request, url_for
+from flask_cors import CORS, cross_origin
+
+from rake_new2 import Rake
 
 if sys.platform.lower() == "win32":
     os.system("color")
