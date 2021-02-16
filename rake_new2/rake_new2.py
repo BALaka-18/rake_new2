@@ -10,7 +10,6 @@ from itertools import product
 import nltk
 from constants import TEST_TEXT
 from nltk.tokenize import wordpunct_tokenize
-
 """
 nltk.download('stopwords')
 nltk.download('punkt')
@@ -175,8 +174,5 @@ if __name__ == "__main__":
     # Get only keywords, arranged in descending order of their importance
     print("RANKED KEYWORDS : \n{}".format(rake_obj.get_ranked_keywords()))
     # Get scores along with keywords, sorted in descending order of degree scores
-    print(
-        "\n\nRANKED KEYWORDS WITH SCORES : \n{}".format(
-            rake_obj.get_keywords_with_scores()
-        )
-    )
+    print("\n\nRANKED KEYWORDS WITH SCORES : \n{}".format(
+        rake_obj.get_keywords_with_scores()))
