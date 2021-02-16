@@ -7,16 +7,22 @@ from itertools import groupby, product, chain
 import nltk
 from nltk.tokenize import wordpunct_tokenize
 
-'''
+"""
 nltk.download('stopwords')
 nltk.download('punkt')
-'''
+"""
 
 # the Rake() class
 
 
-class Rake():
-    def __init__(self, stopwords=None, punctuations=None, language='english', keep_html_tags=False):
+class Rake:
+    def __init__(
+        self,
+        stopwords=None,
+        punctuations=None,
+        language="english",
+        keep_html_tags=False,
+    ):
         # Stopwords
         self.stopwords = stopwords
         if self.stopwords is None:
@@ -32,37 +38,40 @@ class Rake():
         # Clubbing all together into one list of indicators where text will be split
         self.ignore_list = list(set(chain(self.stopwords, self.punctuations)))
         # Initializing the calculation metrics
-        self.freq_dist = None       # Frequency distribution of each word in the text
-        self.word_degree = None     # Degrees of keywords
-        self.ranklist = None        # Ranked keywords + their scores
-        self.ranked_kw = None       # Only ranked keywords
+        self.freq_dist = None  # Frequency distribution of each word in the text
+        self.word_degree = None  # Degrees of keywords
+        self.ranklist = None  # Ranked keywords + their scores
+        self.ranked_kw = None  # Only ranked keywords
 
     # Extract keywords
     def get_keywords_from_raw_text(self, text):
         if self.keep_html_tags:
             sentences = nltk.tokenize.sent_tokenize(text)
-            self.get_keywords_from_sent(sentences)   # _______(1)
+            self.get_keywords_from_sent(sentences)  # _______(1)
         else:
-            cleanr = re.compile('<.*?>')
-            cleantext = re.sub(cleanr, '', text)
+            cleanr = re.compile("<.*?>")
+            cleantext = re.sub(cleanr, "", text)
             sentences = nltk.tokenize.sent_tokenize(cleantext)
-            self.get_keywords_from_sent(sentences)   # _______(1)
+            self.get_keywords_from_sent(sentences)  # _______(1)
+
     # (1)
 
     def get_keywords_from_sent(self, sentences):
-        phrase_list = self.get_keywords(sentences)    # ________(2)
+        phrase_list = self.get_keywords(sentences)  # ________(2)
         # Calculation functions
-        self.build_freq_dist(phrase_list)             # ________(3)
-        self.build_word2word_matrix(phrase_list)      # ________(4)
-        self.get_ranklist(phrase_list)                # ________(5)
+        self.build_freq_dist(phrase_list)  # ________(3)
+        self.build_word2word_matrix(phrase_list)  # ________(4)
+        self.get_ranklist(phrase_list)  # ________(5)
+
     # (2)
 
     def get_keywords(self, sentences):
         words = []
         for sent in sentences:
             words.append([w.lower() for w in wordpunct_tokenize(sent)])
-        phrases = self.get_keywords_from_words(words)     # ________(6)
+        phrases = self.get_keywords_from_words(words)  # ________(6)
         return phrases
+
     # (6) --> USER ACCESSIBLE FUNCTION
 
     def get_keywords_from_words(self, words):
@@ -79,11 +88,13 @@ class Rake():
         filtered_groups = groupby(word_list, lambda x: x not in ignore_final)
         keywords_list = [list(grp[1]) for grp in filtered_groups if grp[0]]
         return keywords_list
+
     # (3)
 
     def build_freq_dist(self, phrase_list):
         # Why chain ? Remember that, phrase_list contains multiple keywords_list(refer function (6)).
         self.freq_dist = Counter(chain.from_iterable(phrase_list))
+
     # (4)
 
     def build_word2word_matrix(self, phrase_list):
@@ -97,6 +108,7 @@ class Rake():
         self.degree = defaultdict(lambda: 0)
         for key in template_graph:
             self.degree[key] = sum(template_graph[key].values())
+
     # (5)
 
     def get_ranklist(self, phrase_list):
@@ -104,7 +116,7 @@ class Rake():
         for kw in phrase_list:
             rank = 0.0
             for word in kw:
-                rank += self.degree[word]/self.freq_dist[word]
+                rank += self.degree[word] / self.freq_dist[word]
             rank = round(rank, 1)
             self.ranklist.append((rank, " ".join(kw)))
         # Return keywords in descending order of their ranks
@@ -121,6 +133,7 @@ class Rake():
             else:
                 final_keywords.append(keyword)
         return final_keywords
+
     # (B)
 
     def get_keywords_with_scores(self):
@@ -131,10 +144,12 @@ class Rake():
             else:
                 final_scored_keywords.append(score_tuple)
         return final_scored_keywords
+
     # (C)
 
     def get_word_freq(self):
         return self.freq_dist
+
     # (D)
 
     def get_kw_degree(self):
@@ -146,7 +161,7 @@ class Rake():
 
 
 # Test run
-if __name__ == '__main__':
+if __name__ == "__main__":
     test_text = TEST_TEXT
     rake_obj = Rake(keep_html_tags=False)
     # Fit the algorithm on the text
@@ -156,5 +171,8 @@ if __name__ == '__main__':
     # Get only keywords, arranged in descending order of their importance
     print("RANKED KEYWORDS : \n{}".format(rake_obj.get_ranked_keywords()))
     # Get scores along with keywords, sorted in descending order of degree scores
-    print("\n\nRANKED KEYWORDS WITH SCORES : \n{}".format(
-        rake_obj.get_keywords_with_scores()))
+    print(
+        "\n\nRANKED KEYWORDS WITH SCORES : \n{}".format(
+            rake_obj.get_keywords_with_scores()
+        )
+    )
