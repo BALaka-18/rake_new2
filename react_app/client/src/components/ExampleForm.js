@@ -1,7 +1,8 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import { MDBBox, MDBBtn, MDBCol, MDBContainer, MDBInput, MDBRow } from 'mdbreact';
-import RadioInput from './RadioInput';
+import {MDBBox, MDBBtn, MDBCol, MDBContainer, MDBInput, MDBRow} from 'mdbreact';
+import React, {Fragment, useEffect, useState} from 'react';
 import Select from 'react-select';
+
+import RadioInput from './RadioInput';
 
 const ExampleForm = () => {
     const enums =

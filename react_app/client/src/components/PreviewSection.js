@@ -1,5 +1,13 @@
+import {
+  MDBAnimation,
+  MDBBtn,
+  MDBCol,
+  MDBContainer,
+  MDBIcon,
+  MDBRow,
+  MDBView
+} from 'mdbreact'
 import React from 'react';
-import { MDBAnimation, MDBBtn, MDBCol, MDBContainer, MDBIcon, MDBRow, MDBView } from 'mdbreact'
 
 const PreviewSection = () => {
     return (

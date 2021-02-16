@@ -1,5 +1,5 @@
-import { MDBContainer, MDBFooter } from "mdbreact";
-import { Fragment } from "react";
+import {MDBContainer, MDBFooter} from "mdbreact";
+import {Fragment} from "react";
 import ExampleForm from "../ExampleForm";
 import GithubCorner from "../GithubCorner";
 import PreviewSection from "../PreviewSection";
