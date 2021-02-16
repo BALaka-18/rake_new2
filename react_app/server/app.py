@@ -1,8 +1,13 @@
 import os
 import sys
 
-from flask import Flask, jsonify, redirect, request, url_for
-from flask_cors import CORS, cross_origin
+from flask import Flask
+from flask import jsonify
+from flask import redirect
+from flask import request
+from flask import url_for
+from flask_cors import CORS
+from flask_cors import cross_origin
 
 from rake_new2 import Rake
 
