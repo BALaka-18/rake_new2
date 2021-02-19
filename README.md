@@ -121,10 +121,6 @@ Please make sure to update tests as appropriate.
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-### Beta Tester
-
-Sankha Subhra Mondal
-
 ### Contributors
 
 |    Student Name    |  GitHub ID | Merged PR No. | Open source programme name | If DWOC, level of PR |
