@@ -7,16 +7,6 @@
 [![GitHub forks](https://img.shields.io/github/forks/BALaka-18/rake_new2?style=social)](https://github.com/BALaka-18/rake_new2/network/members)
 [![GitHub stars](https://img.shields.io/github/stars/BALaka-18/rake_new2?style=social)](https://github.com/BALaka-18/rake_new2/stargazers)
 
-________________________________________________________________________________________________________________________________________________________________________
-
-<p align="center">
-       <img src="https://devscript.tech/woc/img/WOC-logo.png" alt="DWoC logo" width="300" height="300" />
-</p>
-
-<p align="center">
-   <strong>WINTER OF CODE 2020 PROJECT IDEAS FOR rake_new2 : <a href = "https://github.com/BALaka-18/rake_new2/issues?q=is%3Aissue+is%3Aopen+label%3ADWOC">See all updated and open Issues here. </a></strong> Comment to get assigned. Assignment is based on FCFS(First Come, First Serve) basis or based on better proposal/idea/worklflow.
-</p>
-
 ________________________________________________________________________________________________________________________________________________________________________________
 
 <h2 align="center">
