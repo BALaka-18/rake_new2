@@ -7,8 +7,9 @@
 [![GitHub forks](https://img.shields.io/github/forks/BALaka-18/rake_new2?style=social)](https://github.com/BALaka-18/rake_new2/network/members)
 [![GitHub stars](https://img.shields.io/github/stars/BALaka-18/rake_new2?style=social)](https://github.com/BALaka-18/rake_new2/stargazers)
 
-________________________________________________________________________________________________________________________________________________________________________________
-________________________________________________________________________________________________________________________________________________________________________________
+---
+
+<p align="center"><img src="asset/rake.png"></p>________________________________________________________________________________________________________________________________________________________________________________
 
 <h2 align="center">
    <strong>ABOUT THIS PROJECT</strong>
@@ -19,11 +20,12 @@ ________________________________________________________________________________
 </h3>
 
 rake_new2 is a Python library that enables simple and fast keyword extraction
-from any text. This library helps beginners or those lost while finding keywords, understand 
-which keywords are more important.
+from any text. This library helps beginners or those lost while finding
+keywords, understand which keywords are more important.
 
-HOW IS THIS DIFFERENT FROM ANY OTHER ALGORITHM ? : This library gives you weights/scores along with each keyword/keyphrase.
-This helps you pick out the correct key-phrases. Just choose the ones with more weights.   
+HOW IS THIS DIFFERENT FROM ANY OTHER ALGORITHM ? : This library gives you
+weights/scores along with each keyword/keyphrase. This helps you pick out the
+correct key-phrases. Just choose the ones with more weights.
 
 ![Demo](https://user-images.githubusercontent.com/49288068/88929310-97fc2400-d297-11ea-811a-79d986cdfee4.png)
 
@@ -114,10 +116,10 @@ Please make sure to update tests as appropriate.
 
 ### Contributors
 
-|    Student Name    |  GitHub ID | Merged PR No. | Open source programme name | If DWOC, level of PR |
-|:------------------:|:----------:|:-------------:|:--------------------------:|:--------------------:|
-| Sabarish Rajamohan | [sabarish98](https://github.com/sabarish98) |      [#16](https://github.com/BALaka-18/rake_new2/pull/16)      |        Hacktoberfest       |          --          |
-|      Soham Kar     |  [2bit-hack](https://github.com/2bit-hack) |      [#20](https://github.com/BALaka-18/rake_new2/pull/20)      |        Hacktoberfest       |          --          |
-|     Jawen Voon     |   [jawsvk](https://github.com/jawsvk)   |      [#26](https://github.com/BALaka-18/rake_new2/pull/26)      |        Hacktoberfest       |          --          |
-|      Ananthakrishnan Nair RS     |      [akrish4](https://github.com/akrish4)     |      [#47](https://github.com/BALaka-18/rake_new2/pull/47)   |      DWOC   |      Level-1       |
-|      Tushar Nankani       |      [tusharnankani](https://github.com/tusharnankani)       |      [#43](https://github.com/BALaka-18/rake_new2/pull/43)   |      DWOC   |      Level-3       |
+|      Student Name       |                     GitHub ID                     |                     Merged PR No.                     | Open source programme name | If DWOC, level of PR |
+| :---------------------: | :-----------------------------------------------: | :---------------------------------------------------: | :------------------------: | :------------------: |
+|   Sabarish Rajamohan    |    [sabarish98](https://github.com/sabarish98)    | [#16](https://github.com/BALaka-18/rake_new2/pull/16) |       Hacktoberfest        |          --          |
+|        Soham Kar        |     [2bit-hack](https://github.com/2bit-hack)     | [#20](https://github.com/BALaka-18/rake_new2/pull/20) |       Hacktoberfest        |          --          |
+|       Jawen Voon        |        [jawsvk](https://github.com/jawsvk)        | [#26](https://github.com/BALaka-18/rake_new2/pull/26) |       Hacktoberfest        |          --          |
+| Ananthakrishnan Nair RS |       [akrish4](https://github.com/akrish4)       | [#47](https://github.com/BALaka-18/rake_new2/pull/47) |            DWOC            |       Level-1        |
+|     Tushar Nankani      | [tusharnankani](https://github.com/tusharnankani) | [#43](https://github.com/BALaka-18/rake_new2/pull/43) |            DWOC            |       Level-3        |
