@@ -6,7 +6,7 @@ pytest-cov
 ###### Requirements with Version Specifiers ######`
 click==7.1.2
 joblib==0.16.0
-nltk==3.5
+nltk==3.6.5
 rake_new2==1.0.5
 regex==2020.7.14
 tqdm==4.48.0
