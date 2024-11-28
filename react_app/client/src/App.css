@@ -1,0 +1,110 @@
+:root {
+	--pink200: #ffb4a2;
+	--pink400: #E5909B;
+	--violet200: #b5838d;
+	--violet400: #6d6875;
+	--violet800: #464169;
+	--text2: #494451;
+	--violet-d: #362353;
+}
+
+.color-violet {
+	color: var(--violet800);
+}
+
+.hr-violet {
+	border: 1px solid var(--violet800);
+}
+
+.color-violet-d {
+	color: var(--violet-d);
+}
+
+.github-corner :hover {
+	transition: transform .25s ease-out;
+}
+
+.github-corner svg {
+	color: var(--pink200);
+	fill: var(--violet800);
+	height: 80px;
+	width: 80px;
+	position: fixed;
+	top: 0;
+	right: 0;
+}
+
+@media (min-width: 768px) {
+	.github-corner .octo-arm :hover {
+		-webkit-animation: octocat-wave .56s ease-in-out;
+		animation: octocat-wave .56s ease-in-out;
+	}
+}
+
+@keyframes octocat-wave {
+	0%, to {
+		transform: rotate(0)
+	}
+	20%, 60% {
+		transform: rotate(-25deg)
+	}
+	40%, 80% {
+		transform: rotate(10deg)
+	}
+}
+
+.preview-section {
+	background: rgb(255, 180, 162);
+	background: linear-gradient(230deg, rgba(255, 180, 162, 1) 25%, rgba(229, 144, 155, 1) 50%, rgba(181, 131, 141, 1) 75%, var(--violet-d) 100%) no-repeat;
+	min-height: 100vh;
+}
+
+.preview-section .rake-title {
+	font-size: 3.2rem;
+	font-family: 'Press Start 2P';
+	letter-spacing: 0.5em;
+	text-align: center;
+	background: linear-gradient(90deg, rgba(75, 43, 122, 1) 20%, rgba(3, 59, 207, 1) 40%, rgba(163, 0, 195, 1) 60%, rgba(75, 43, 122, 1) 80%);
+	background-size: 200% auto;
+	color: #000;
+	background-clip: text;
+	color: transparent;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: shine 2s linear infinite;
+}
+
+@keyframes shine {
+	to {
+		background-position: 200% center;
+	}
+}
+
+.preview-section .rake-info {
+	font-size: 1.06rem;
+	font-family: monospace;
+	color: var(--text2);
+	font-weight: bold;
+}
+
+.preview-section .btn-round {
+	background-color: var(--violet800) !important;
+	border-radius: 50px;
+}
+
+.preview-section .btn-outline-round {
+	border-color: var(--violet800) !important;
+	color: var(--violet800) !important;
+	border-radius: 50px;
+}
+
+.example-form .dropdown-select {
+	width: 300px;
+}
+
+.footer {
+	background: var(--violet-d);
+	color: white;
+	font-size: 1rem;
+	font-weight: bold;
+}
